@@ -1,4 +1,5 @@
 # Nom du projet
+Your Fitness Buddy
 
 ## Composition du groupe
 
@@ -10,17 +11,26 @@
 
 ## Description du projet
 
-Ce projet consiste en [une brève description des fonctionnalités et de l'objectif du projet].
+Ce projet consiste en application mobile Android qui permet de suivre son programme fitness. L'application permet de récupérer des exercices, des citations, des calories brûlées et de synchroniser les données avec Google Fit.
 
 ## Fonctionnalités
 
-- [Nom de la fonctionnalité 1]
-  - [Description détaillée de la fonctionnalité 1]
-- [Nom de la fonctionnalité 2]
-  - [Description détaillée de la fonctionnalité 2]
-- [Nom de la fonctionnalité 3]
-  - [Description détaillée de la fonctionnalité 3]
-- ...
+- Récupération d'exercices
+  - Selon le muscle ciblé
+  - Selon la difficulté
+- Récupération d'une citation aléatoire pour se motiver
+- Changement de thème "Buddy" (Ronnie Coleman, Arnold Schwarzenegger, Chris Bumstead...)
+  - Changement de fond d'écran
+- Compter le nombre de calories brûlées selon l'activité physique
+  - Selon le temps passé à faire l'activité
+  - Selon le poids de la personne
+- Créer un programme fitness
+  - par jour
+  - par semaine
+- Syncronisation avec Google Fit
+  - Récupération des données de l'utilisateur
+  - Envoi des données de l'utilisateur
+- Partager son programme fitness sur les réseaux sociaux
 
 ## Instructions pour l'installation et l'utilisation
 
@@ -28,4 +38,10 @@ Ce projet consiste en [une brève description des fonctionnalités et de l'objec
 
 ## Liens
 
-[Les liens du projet].
+https://api-ninjas.com/api/exercises
+
+https://api-ninjas.com/api/caloriesburned
+
+https://api-ninjas.com/api/quotes
+
+https://developers.google.com/fit/android?hl=fr
