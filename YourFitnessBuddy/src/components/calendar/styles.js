@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const Calendar = styled.View`
+export const CalendarContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   margin-horizontal: 16px;
