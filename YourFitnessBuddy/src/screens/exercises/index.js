@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FlatList } from "react-native";
 
+import { useDispatch, useSelector } from "react-redux";
+import { addToFavorites, removeFromFavorites } from "../../actions/favorites";
+
 import { useTheme } from "styled-components/native";
-import AsyncStorage from '@react-native-async-storage/async-storage/src/AsyncStorage';
 
 import AppNavigator from "../../components/appNavigator";
 import { fetchExercises } from "../../api/routes";
@@ -20,20 +22,9 @@ import {
 
 export default ExercisesScreen = ({ navigation }) => {
   const theme = useTheme();
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites.favorites);
   const [exercises, setExercises] = useState([]);
-  const [favorites, setFavorites] = useState([]);
-
-  useEffect(() => {
-    const fetchFavoritesData = async () => {
-      const keys = await AsyncStorage.getAllKeys();
-      const favoriteKeys = keys.filter((key) => key.includes("favorite_"));
-      const favoritesExercises = await AsyncStorage.multiGet(favoriteKeys);
-      const parsedExercises = favoritesExercises.map(([key, value]) => JSON.parse(value));
-      setFavorites(parsedExercises);
-    };
-
-    fetchFavoritesData();
-  }, []);
 
   const handleSearchResults = (results) => {
     setExercises(results);
@@ -50,7 +41,15 @@ export default ExercisesScreen = ({ navigation }) => {
 
   const renderItem = ({ item }) => {
     const isFavorite = favorites.some(favorite => favorite.name === item.name);
-    
+
+    const handleFavoritePress = async () => {
+      if (isFavorite) {
+        dispatch(removeFromFavorites(item.name));
+      } else {
+        dispatch(addToFavorites(item));
+      }
+    };
+
     return (
       <Card
         key={item.name}
@@ -61,6 +60,7 @@ export default ExercisesScreen = ({ navigation }) => {
         difficulty={item.difficulty}
         instructions={item.instructions}
         isFavorite={isFavorite}
+        onFavoritePress={handleFavoritePress}
       />
     );
   };

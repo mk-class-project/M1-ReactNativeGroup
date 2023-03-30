@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useEffect } from "react";
 import { FlatList } from "react-native-gesture-handler";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromFavorites } from "../../actions/favorites";
 
 import { useTheme } from "styled-components/native";
 
@@ -11,23 +12,18 @@ import { Container, Overlay, Content, Title, BackgroundImage } from "../../globa
 
 export default FavoritesScreen = ({ navigation }) => {
   const theme = useTheme();
-  const [favorites, setFavorites] = useState([]);
-
-  const fetchFavoritesData = async () => {
-    const keys = await AsyncStorage.getAllKeys();
-    const favoriteKeys = keys.filter((key) => key.includes("favorite_"));
-    const favoritesExercises = await AsyncStorage.multiGet(favoriteKeys);
-    const parsedExercises = favoritesExercises.map(([key, value]) => JSON.parse(value));
-    setFavorites(parsedExercises);
-  };
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites.favorites);
 
   useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      fetchFavoritesData();
-    });
+    const unsubscribe = navigation.addListener('focus', () => { });
 
     return unsubscribe;
   }, [navigation]);
+
+  const handleRemoveFromFavorites = (name) => {
+    dispatch(removeFromFavorites(name));
+  };
 
   const renderItem = ({ item }) => (
     <Card
@@ -39,10 +35,8 @@ export default FavoritesScreen = ({ navigation }) => {
       difficulty={item.difficulty}
       instructions={item.instructions}
       isFavorite={true}
-      onFavoriteChange={(isFavorited) => {
-        if (!isFavorited) {
-          fetchFavoritesData();
-        }
+      onFavoritePress={() => {
+        handleRemoveFromFavorites(item.name);
       }}
     />
   );
