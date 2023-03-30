@@ -28,6 +28,9 @@ const AppNavigator = ({ navigation }) => {
         <NavButton onPress={() => handleNav('favorites')}>
           <NavButtonText>Favorites</NavButtonText>
         </NavButton>
+        <NavButton onPress={() => handleNav('program')}>
+          <NavButtonText>Program</NavButtonText>
+        </NavButton>
         <ModalButton onPress={toggleModal}>
           <NavButtonText>Change Theme</NavButtonText>
         </ModalButton>
