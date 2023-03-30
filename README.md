@@ -27,9 +27,7 @@ Ce projet consiste en application mobile Android qui permet de suivre son progra
 - Créer un programme fitness
   - par jour
   - par semaine
-- Syncronisation avec Google Fit
-  - Récupération des données de l'utilisateur
-  - Envoi des données de l'utilisateur
+- Accèder à la galerie photos pour ajouter son propre thème
 - Partager son programme fitness sur les réseaux sociaux
 
 ## Instructions pour l'installation et l'utilisation
