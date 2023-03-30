@@ -1,28 +1,36 @@
-import React, { useState } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useState, useEffect } from 'react';
 import { TouchableOpacity, Text } from 'react-native';
+
+import { useDispatch } from "react-redux";
+import { addToFavorites, removeFromFavorites } from "../../actions/favorites";
 
 import { CardContainer, Header, Type, Title, Subtitle, Body, Instructions } from './styles';
 
 const Card = ({ name, type, muscle, equipment, difficulty, instructions, isFavorite, onFavoriteChange }) => {
-
   const [favorite, setIsFavorite] = useState(isFavorite);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setIsFavorite(isFavorite);
+  }, [isFavorite]);
 
   const handleFavorite = async () => {
-    const key = `favorite_${name}`;
-    const storedValue = await AsyncStorage.getItem(key);
-  
-    if (storedValue) {
-      await AsyncStorage.removeItem(key);
-      setIsFavorite(false);
-      onFavoriteChange && onFavoriteChange(false);
+    setIsFavorite(!favorite);
+    onFavoriteChange && onFavoriteChange(!favorite);
+
+    if (!favorite) {
+      dispatch(addToFavorites({
+        name,
+        type,
+        muscle,
+        equipment,
+        difficulty,
+        instructions,
+      }));
     } else {
-      await AsyncStorage.setItem(key, JSON.stringify({ name, type, muscle, equipment, difficulty, instructions }));
-      setIsFavorite(true);
-      onFavoriteChange && onFavoriteChange(true);
+      dispatch(removeFromFavorites(name));
     }
   };
-  
 
   return (
     <CardContainer>
