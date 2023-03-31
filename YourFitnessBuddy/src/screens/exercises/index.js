@@ -10,6 +10,7 @@ import AppNavigator from "../../components/appNavigator";
 import { fetchExercises } from "../../api/routes";
 
 import SearchBar from "../../components/searchBar";
+import FilterDifficulty from "../../components/filterDifficulty";
 import Card from "../../components/card";
 
 import {
@@ -72,6 +73,7 @@ export default ExercisesScreen = ({ navigation }) => {
         <Content>
           <Title>Let's Get You Jacked !</Title>
           <SearchBar onSearch={handleSearchResults} />
+          <FilterDifficulty onSearch={handleSearchResults} />
           <FlatList
             data={exercises}
             renderItem={renderItem}

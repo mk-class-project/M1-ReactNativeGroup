@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 import { SearchContainer, SearchInput, SearchButton, Text } from './styles';
-import { fetchExercises, fetchExercisesByMuscle } from "../../api/routes";
+import { fetchExercises, fetchExercisesByDifficulty } from "../../api/routes";
 
-import { searchBar } from '../../actions/search';
+import { filterDifficulty } from '../../actions/search';
 import { useDispatch } from 'react-redux';
 
-const SearchBar = ({ onSearch }) => {
+const FilterDifficulty = ({ onSearch }) => {
   const [query, setQuery] = useState('');
   const dispatch = useDispatch();
 
@@ -17,25 +17,27 @@ const SearchBar = ({ onSearch }) => {
   const handleSearch = async () => {
     let data;
     if(query) {
-      data = await fetchExercisesByMuscle(query);
+      data = await fetchExercisesByDifficulty(query);
     } else {
       data = await fetchExercises();
     }
 
-    dispatch(searchBar(data));
+    dispatch(filterDifficulty(data));
     onSearch(data);
   };
   
   return (
-    <SearchContainer>
+    <>
       <Text>
-        Choose your muscle group buddy!
+        Choose your difficulty !
       </Text>
-      <SearchInput placeholder="example: 'biceps'" value={query} onChangeText={handleInputChange} />
+      <SearchContainer>
+      <SearchInput placeholder="Beginner, Intermediate or Expert" value={query} onChangeText={handleInputChange} />
       <SearchButton title="Yeah Buddy!" onPress={handleSearch} />
     </SearchContainer>
+    </>
   );
 
 }
 
-export default SearchBar;
+export default FilterDifficulty;

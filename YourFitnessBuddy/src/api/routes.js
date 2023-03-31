@@ -33,3 +33,12 @@ export const fetchExercisesByMuscle = async (query) => {
     console.log(err);
   }
 };
+
+export const fetchExercisesByDifficulty = async (query) => {
+  try {
+    const res = await axios.get(`${BASE_API_URL}/exercises?difficulty=${query}`, options);
+    return res.data;
+  } catch (err) {
+    console.log(err);
+  }
+};

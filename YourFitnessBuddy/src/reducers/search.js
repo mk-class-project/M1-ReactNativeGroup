@@ -1,7 +1,8 @@
-import { SEARCH_BAR } from "../actions/search";
+import { SEARCH_BAR, FILTER_DIFFICULTY } from "../actions/search";
 
 const initialState = {
     search: '',
+    selectedDifficulty: null,
 };
 
 export default (state = initialState, action) => {
@@ -10,6 +11,11 @@ export default (state = initialState, action) => {
         return {
           ...state,
           search: state.search,
+        };
+      case FILTER_DIFFICULTY:
+        return {
+          ...state,
+          selectedDifficulty: state.selectedDifficulty,
         };
       default:
         return state;
