@@ -19,7 +19,7 @@ Ce projet consiste en application mobile Android qui permet de suivre son progra
   - Selon le muscle ciblé
   - Selon la difficulté
 - Récupération d'une citation aléatoire pour se motiver
-- Changement de thème "Buddy" (Ronnie Coleman, Arnold Schwarzenegger, Chris Bumstead...)
+- Changement de thème "Buddy" (Ronnie, Schwarzenegger, Cbum...)
   - Changement de fond d'écran
   - Accèder à la galerie photos pour ajouter son propre thème
 - Compter le nombre de calories brûlées selon l'activité physique
@@ -35,15 +35,14 @@ Ce projet consiste en application mobile Android qui permet de suivre son progra
 06/04 : 
 - Récupération d'exercices
   - Selon le muscle ciblé
+  - Selon la difficulté
 - Récupération d'une citation aléatoire pour se motiver
 - Créer un programme fitness
   - par jour
   - par semaine
+- Accèder à la galerie photos pour ajouter son propre thème
 
-26/04 : 
-- Récupération d'exercices
-  - Selon le muscle ciblé
-  - Selon la difficulté
+20/04 : 
 - Partager son programme fitness sur les réseaux sociaux
 - Compter le nombre de calories brûlées selon l'activité physique
   - Selon le temps passé à faire l'activité
