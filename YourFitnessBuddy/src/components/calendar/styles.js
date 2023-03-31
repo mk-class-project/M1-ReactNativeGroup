@@ -1,23 +1,27 @@
 import styled from 'styled-components/native';
 
-export const CalendarContainer = styled.View`
+export const DayContainer = styled.View`
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-horizontal: 16px;
-  margin-top: 16px;
+  margin-top: 8px;
+  margin-bottom: 16px;
 `;
 
-export const CalendarDay = styled.View`
+export const CalendarDayBox = styled.View`
   align-items: center;
   justify-content: center;
   width: 32px;
   height: 32px;
   border-radius: 16px;
-  background-color: white;
+  background-color: ${({ isSelected }) => (isSelected ? '#007AFF' : 'white')};
+  margin-bottom: 8px;
 `;
 
-export const DayText = styled.Text`
+export const DayBoxText = styled.Text`
   font-size: 16px;
   font-weight: bold;
+  color: ${({ isSelected }) => (isSelected ? 'white' : 'black')};
 `;
 
