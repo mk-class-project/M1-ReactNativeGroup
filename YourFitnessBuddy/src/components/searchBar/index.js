@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import { SearchContainer, SearchInput, SearchButton, Text } from './styles';
 import { fetchExercises, fetchExercisesByMuscle } from "../../api/routes";
 
+import { searchBar } from '../../actions/search';
+import { useDispatch, useSelector } from 'react-redux';
+
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
@@ -31,6 +34,7 @@ const SearchBar = ({ onSearch }) => {
       <SearchButton title="Yeah Buddy!" onPress={handleSearch} />
     </SearchContainer>
   );
+
 }
 
 export default SearchBar;
