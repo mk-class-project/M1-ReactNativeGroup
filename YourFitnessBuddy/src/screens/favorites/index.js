@@ -42,6 +42,7 @@ export default FavoritesScreen = ({ navigation }) => {
   );
 
   return (
+    <>
     <Container>
       <BackgroundImage source={theme.image} resizeMode="cover">
         <Overlay />
@@ -54,7 +55,9 @@ export default FavoritesScreen = ({ navigation }) => {
           />
         </Content>
       </BackgroundImage>
-      <AppNavigator navigation={navigation} />
+      
     </Container>
+    <AppNavigator navigation={navigation} />
+    </>
   );
 };
