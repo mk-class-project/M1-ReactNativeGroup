@@ -25,9 +25,9 @@ export const fetchExercises = async () => {
   }
 };
 
-export const fetchExercisesByMuscle = async (query) => {
+export const fetchExercisesByMuscleAndDifficulty = async (query, diff) => {
   try {
-    const res = await axios.get(`${BASE_API_URL}/exercises?muscle=${query}`, options);
+    const res = await axios.get(`${BASE_API_URL}/exercises?muscle=${query}&difficulty=${diff}`, options);
     return res.data;
   } catch (err) {
     console.log(err);

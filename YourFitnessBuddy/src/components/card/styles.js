@@ -1,11 +1,11 @@
 import styled from 'styled-components/native';
 
 export const CardContainer = styled.View`
-background-color: #fff;
-border-radius: 10px;
-margin-bottom: 20px;
-padding: 20px;
-width: 90%;
+  background-color: ${props => props.theme.colorWhiteOpcaity};
+  border-radius: 25px;
+  margin-bottom: 10px;
+  padding: 20px;
+  width: 100%;
 `;
 
 export const Header = styled.View`
@@ -18,22 +18,26 @@ export const Header = styled.View`
 export const Title = styled.Text`
   font-size: 24px;
   font-weight: bold;
+  color: ${props => props.theme.colorBlack};
 `;
 
 export const Type = styled.Text`
   font-size: 16px;
-  color: #888;
+  color: ${props => props.theme.colorBlack};
 `;
 
 export const Body = styled.View`
   margin-bottom: 10px;
+  color: ${props => props.theme.colorBlack};
 `;
 
 export const Subtitle = styled.Text`
   font-size: 18px;
   margin-bottom: 5px;
+  color: ${props => props.theme.colorBlack};
 `;
 
 export const Instructions = styled.Text`
   font-size: 16px;
+  color: ${props => props.theme.colorBlack};
 `;

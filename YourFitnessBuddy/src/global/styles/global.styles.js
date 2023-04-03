@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #333333;
+  background-color: ${props => props.theme.colorGrey};
   align-items: center;
   justify-content: center;
 `;
@@ -31,13 +31,13 @@ export const Content = styled.View`
 export const Title = styled.Text`
   font-size: 32px;
   font-weight: bold;
-  color: white;
+  color: ${props => props.theme.colorWhite};
   margin-bottom: 20px;
 `;
 
 export const Subtitle = styled.Text`
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: ${props => props.theme.colorWhite};
   margin-bottom: 10px;
 `;

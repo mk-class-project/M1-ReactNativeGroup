@@ -70,7 +70,7 @@ export default ExercisesScreen = ({ navigation }) => {
       <BackgroundImage source={theme.image} resizeMode="cover">
         <Overlay />
         <Content>
-          <Title>Let's Get You Jacked !</Title>
+          <Title>Let's Get You Ripped !</Title>
           <SearchBar onSearch={handleSearchResults} />
           <FlatList
             data={exercises}
