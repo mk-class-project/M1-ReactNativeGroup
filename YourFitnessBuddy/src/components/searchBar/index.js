@@ -51,7 +51,7 @@ const SearchBar = ({ onSearch }) => {
       </Text>
       <InputGroup>
         <SearchInput
-          placeholder="example: 'biceps'"
+          placeholder="'biceps'"
           value={query}
           onChangeText={handleInputChange}
         />

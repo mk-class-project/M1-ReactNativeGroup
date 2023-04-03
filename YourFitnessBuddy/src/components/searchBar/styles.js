@@ -3,16 +3,17 @@ import styled from 'styled-components';
 export const SearchContainer = styled.View`
   width: 90%;
   margin: 10px;
-
 `;
 
 export const SearchInput = styled.TextInput`
   height: auto;
-  width: auto;
+  width: 50%;
   background-color: ${props => props.theme.colorWhite};
   padding-horizontal: 10px;
   margin-bottom: 10px;
+  border-radius: 10px;
 `;
+
 
 export const SearchButton = styled.Button``;
 
@@ -27,8 +28,7 @@ export const InputGroup = styled.View`
   background-color: ${props => props.theme.colorBlockOpacity};
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  padding: 8px;
+  padding: 2px;
   border-radius: 4px;
 `;
 

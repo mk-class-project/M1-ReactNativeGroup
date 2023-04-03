@@ -7,19 +7,25 @@ export default BuddyThemes = {
     image: imageR,
     title: "Ronnie Coleman",
     colorGrey: "#A9A9A9",
-    colorWhite: "#FFFFFF",
-    colorBlockOpacity: "rgba(0, 0, 0, 0.2)",
+    colorWhite: "#F5F5F5",
+    colorBlack: "#000000",
+    colorBlockOpacity: "rgba(0, 0, 0, 0.7)",
+    colorWhiteOpcaity: "rgba(255, 255, 255, 0.8)",
   },
   Arnold: {
     image: imageA,
     title: "Arnold Schwarzenegger",
     colorGrey: "#A9A9A9 ",
     colorWhite: "#FFFFFF",
+    colorBlack: "#000000",
+    colorBlockOpacity: "rgba(0, 0, 0, 0.2)",
   },
   Cbum: {
     image: imageC,
     title: "Chris Bumstead",
     colorGrey: "#A9A9A9 ",
     colorWhite: "#FFFFFF",
+    colorBlack: "#000000",
+    colorBlockOpacity: "rgba(0, 0, 0, 0.2)",
   }
 };
