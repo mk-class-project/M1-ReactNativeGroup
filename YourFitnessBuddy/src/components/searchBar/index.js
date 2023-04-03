@@ -65,7 +65,6 @@ const SearchBar = ({ onSearch }) => {
                 <RadioButton
                   value={option}
                   status={difficulty === option ? 'checked' : 'unchecked'}
-                  onPress={() => handleDifficultyChange(option)}
                 />
                 <RadioText>{option}</RadioText>
               </RadioLabel>
