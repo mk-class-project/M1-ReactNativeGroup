@@ -33,3 +33,15 @@ export const fetchExercisesByMuscleAndDifficulty = async (query, diff) => {
     console.log(err);
   }
 };
+
+
+
+
+export const fetchCalorriesBurned = async (query) => {
+  try {
+    const res = await axios.get(`${BASE_API_URL}/caloriesburnedactivities?activity=${query}`, options);
+    return res.data;
+  } catch (err) {
+    console.log(err);
+  }
+};

@@ -59,5 +59,3 @@ https://api-ninjas.com/api/exercises
 https://api-ninjas.com/api/caloriesburned
 
 https://api-ninjas.com/api/quotes
-
-https://developers.google.com/fit/android?hl=fr
