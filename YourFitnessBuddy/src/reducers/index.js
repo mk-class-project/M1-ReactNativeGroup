@@ -7,6 +7,6 @@ import calendar from './calendar';
 export default combineReducers({
   counter,
   favorites,
-  search
+  search,
   calendar,
 });
