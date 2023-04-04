@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react';
-import { NavButton, NavContainer, NavButtonText, ModalButton, ModalContent, ModalOverlay } from './styles';
+import { NavButton, NavContainer, NavButtonText, ModalButton, ModalContent, ModalOverlay, DropdownContainer, DropdownItem, } from './styles';
 
 import ThemeHandler from '../themeHandler';
 import ThemeContext from '../../global/themeContext';
 
 const AppNavigator = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
   const handleThemeChange = useContext(ThemeContext);
 
   const handleNav = (page) => {
@@ -16,15 +17,29 @@ const AppNavigator = ({ navigation }) => {
     setModalVisible(!modalVisible);
   };
 
+  const toggleDropdown = () => {
+    setDropdownVisible(!dropdownVisible);
+  };
+
   return (
     <>
       <NavContainer>
         <NavButton onPress={() => handleNav('home')}>
           <NavButtonText>Home</NavButtonText>
         </NavButton>
-        <NavButton onPress={() => handleNav('exercises')}>
-          <NavButtonText>Exercises</NavButtonText>
+        <NavButton onPress={toggleDropdown}>
+          <NavButtonText>Workouts</NavButtonText>
         </NavButton>
+        {dropdownVisible && (
+        <DropdownContainer>
+          <DropdownItem onPress={() => handleNav('exercises')}>
+            <NavButtonText>Exercises</NavButtonText>
+          </DropdownItem>
+          <DropdownItem onPress={() => handleNav('program')} last>
+            <NavButtonText>Program</NavButtonText>
+          </DropdownItem>
+        </DropdownContainer>
+      )}
         <NavButton onPress={() => handleNav('favorites')}>
           <NavButtonText>Favorites</NavButtonText>
         </NavButton>

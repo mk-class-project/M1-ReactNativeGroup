@@ -7,6 +7,7 @@ import styled from 'styled-components/native';
 import HomeScreen from '../screens/home';
 import FavoritesScreen from '../screens/favorites';
 import ExercisesScreen from '../screens/exercises';
+import ProgramScreen from '../screens/program';
 
 const Stack = createStackNavigator();
 
@@ -32,6 +33,11 @@ export default Router = ({ handleThemeChange }) => {
           <Stack.Screen
             name="favorites"
             component={FavoritesScreen}
+            initialParams={{ handleThemeChange: handleThemeChange }}
+          />
+          <Stack.Screen
+            name="program"
+            component={ProgramScreen}
             initialParams={{ handleThemeChange: handleThemeChange }}
           />
         </Stack.Navigator>

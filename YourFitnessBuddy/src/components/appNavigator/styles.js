@@ -44,3 +44,14 @@ export const ModalContent = styled.View`
   padding: 20px;
   border-radius: 10px;
 `;
+
+export const DropdownContainer = styled.View`
+  position: absolute;
+  bottom: 100%;
+  border-radius: 5px;
+  background-color: black;
+`;
+
+export const DropdownItem = styled.TouchableOpacity`
+  padding: 8px 16px;
+`;
