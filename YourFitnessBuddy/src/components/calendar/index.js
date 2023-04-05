@@ -1,21 +1,15 @@
 import React, { useState } from 'react';
-import { ScrollView, Dimensions } from 'react-native';
+import { ScrollView, Dimensions, Text } from 'react-native';
+import { useSelector } from 'react-redux';
 import { WeekContainer, Day, DayText, DayData, DaySeparator } from './styles';
 
-const Calendar = () => {
+const CalendarBox = () => {
   const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   const [selectedDay, setSelectedDay] = useState(0);
   const screenWidth = Dimensions.get('window').width;
 
-  const sampleData = {
-    Mon: 'Task A',
-    Tue: 'Task B',
-    Wed: 'Task C',
-    Thu: 'Task D',
-    Fri: 'Task E',
-    Sat: 'Task F',
-    Sun: 'Task G',
-  };
+  const calendarData = useSelector((state) => state.calendar.calendar);
+  console.log('Calendar data:', calendarData);
 
   const handleScroll = (event) => {
     const scrollX = event.nativeEvent.contentOffset.x;
@@ -35,7 +29,11 @@ const Calendar = () => {
           <Day key={index} width={screenWidth}>
             <DayText selected={index === selectedDay}>{day}</DayText>
             <DaySeparator />
-            <DayData>{sampleData[day]}</DayData>
+            <DayData>
+              {calendarData[day].map((exercise, index) => (
+                <Text key={index}>{exercise.name}</Text>
+              ))}
+            </DayData>
           </Day>
         ))}
       </ScrollView>
@@ -43,4 +41,4 @@ const Calendar = () => {
   );
 };
 
-export default Calendar;
+export default CalendarBox;

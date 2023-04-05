@@ -15,6 +15,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_CALENDAR: {
+      console.log('Updating calendar:', action.payload);
       const { day, exercise, actionType } = action.payload;
       const updatedDay = [...state.calendar[day]];
 
