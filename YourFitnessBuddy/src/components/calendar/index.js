@@ -31,7 +31,7 @@ const CalendarBox = () => {
             <DayData>
               {exercises.map((exercise, index) => (
                 <Text key={index} style={{ marginVertical: 5 }}>
-                  {exercise.name}
+                  {exercise.name} - 
                 </Text>
               ))}
             </DayData>

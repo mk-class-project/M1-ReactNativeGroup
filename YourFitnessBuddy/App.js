@@ -7,7 +7,8 @@ import BuddyThemes from "./src/components/themeProvider";
 
 import setupAxiosInterceptors from "./src/config/interceptor";
 import Router from "./src/config/router";
-import { store } from "./src/config/store";
+import { store, persistor } from "./src/config/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 import RNBootSplash from "react-native-bootsplash";
 
@@ -24,15 +25,17 @@ export default App = () => {
     setTimeout(() => {
       RNBootSplash.hide({ fade: true });
     }, 3000);
-    
+
   }, []);
 
   return (
     <ThemeContext.Provider value={handleThemeChange}>
       <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <Router />
-      </ThemeProvider>
+        <PersistGate loading={null} persistor={persistor}>
+          <ThemeProvider theme={theme}>
+            <Router />
+          </ThemeProvider>
+        </PersistGate>
       </Provider>
     </ThemeContext.Provider>
   );
