@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FlatList } from "react-native";
+import { FlatList, ActivityIndicator } from "react-native";
 
 import { useDispatch, useSelector } from "react-redux";
 import { addToFavorites, removeFromFavorites } from "../../actions/favorites";
@@ -25,6 +25,7 @@ export default ExercisesScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorites.favorites);
   const [exercises, setExercises] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const handleSearchResults = (results) => {
     setExercises(results);
@@ -34,6 +35,7 @@ export default ExercisesScreen = ({ navigation }) => {
     const fetchExercisesData = async () => {
       const data = await fetchExercises();
       setExercises(data);
+      setLoading(false);
     };
 
     fetchExercisesData();
@@ -72,11 +74,15 @@ export default ExercisesScreen = ({ navigation }) => {
         <Content>
           <Title>Let's Get You Ripped !</Title>
           <SearchBar onSearch={handleSearchResults} />
-          <FlatList
-            data={exercises}
-            renderItem={renderItem}
-            keyExtractor={(item) => item.name}
-          />
+          {loading ? (
+            <ActivityIndicator size="large" color={theme.colorWhite} />
+          ) : (
+            <FlatList
+              data={exercises}
+              renderItem={renderItem}
+              keyExtractor={(item) => item.name}
+            />
+          )}
         </Content>
       </BackgroundImage>
       <AppNavigator navigation={navigation} />
