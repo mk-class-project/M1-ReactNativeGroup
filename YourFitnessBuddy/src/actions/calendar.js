@@ -1,6 +1,10 @@
-export const UPDATE_CALENDAR = 'UPDATE_CALENDAR';
+export const ADD_EXERCISE_TO_DAY = 'ADD_EXERCISE_TO_DAY';
 
-export const updateCalendar = (day, exercise, actionType) => ({
-  type: UPDATE_CALENDAR,
-  payload: { day, exercise, actionType },
+export const addExerciseToDay = (day, exercise) => ({
+  type: ADD_EXERCISE_TO_DAY,
+  payload: {
+    day,
+    exercise
+  }
 });
+

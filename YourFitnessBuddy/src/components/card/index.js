@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { TouchableOpacity, Text } from 'react-native';
+import ModalDropdown from 'react-native-modal-dropdown';
 import { useDispatch } from "react-redux";
 import { addToFavorites, removeFromFavorites } from "../../actions/favorites";
+import { addExerciseToDay } from "../../actions/calendar";
 
 import { CardContainer, Header, Type, Title, Subtitle, Body, Instructions } from './styles';
-import ModalCalendar from '../modalCalendar';
 
 const Card = ({ name, type, muscle, equipment, difficulty, instructions, isFavorite, onFavoriteChange }) => {
   const [favorite, setIsFavorite] = useState(isFavorite);
-  const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,12 +33,9 @@ const Card = ({ name, type, muscle, equipment, difficulty, instructions, isFavor
     }
   };
 
-  const openModal = () => {
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
+  const handleAddToDay = (index, value) => {
+    const day = value;
+    dispatch(addExerciseToDay(day, { name, type, muscle, equipment, difficulty, instructions }));
   };
 
   return (
@@ -55,13 +52,10 @@ const Card = ({ name, type, muscle, equipment, difficulty, instructions, isFavor
       <TouchableOpacity onPress={handleFavorite}>
         <Text>{favorite ? 'Remove from Favorites' : 'Add to Favorites'}</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={openModal}>
-        <Text>Add to Calendar</Text>
-      </TouchableOpacity>
-      <ModalCalendar
-        exercise={{ name, type, muscle, equipment, difficulty, instructions }}
-        visible={showModal}
-        onClose={closeModal}
+      <ModalDropdown
+        options={['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']}
+        onSelect={handleAddToDay}
+        defaultValue="Add to Day"
       />
     </CardContainer>
   );
