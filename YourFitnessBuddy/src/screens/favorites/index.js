@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FlatList } from "react-native-gesture-handler";
+import { FlatList, Text } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromFavorites } from "../../actions/favorites";
 
@@ -8,7 +8,7 @@ import { useTheme } from "styled-components/native";
 import AppNavigator from "../../components/appNavigator";
 import Card from "../../components/card";
 
-import { Container, Overlay, Content, Title, BackgroundImage } from "../../global/styles/global.styles";
+import { Container, Overlay, Content, Subtitle, Title, BackgroundImage } from "../../global/styles/global.styles";
 
 export default FavoritesScreen = ({ navigation }) => {
   const theme = useTheme();
@@ -43,21 +43,24 @@ export default FavoritesScreen = ({ navigation }) => {
 
   return (
     <>
-    <Container>
-      <BackgroundImage source={theme.image} resizeMode="cover">
-        <Overlay />
-        <Content>
-          <Title>You love those exercises!</Title>
-          <FlatList
-            data={favorites}
-            renderItem={renderItem}
-            keyExtractor={(item) => item.name}
-          />
-        </Content>
-      </BackgroundImage>
-      
-    </Container>
-    <AppNavigator navigation={navigation} />
+      <Container>
+        <BackgroundImage source={theme.image} resizeMode="cover">
+          <Overlay />
+          <Content>
+            <Title>You love those exercises!</Title>
+            {favorites.length > 0 ? (
+              <FlatList
+                data={favorites}
+                renderItem={renderItem}
+                keyExtractor={(item) => item.name}
+              />
+            ) : (
+              <Subtitle style={{ color: theme.colorWhite }}>No favorites yet. Add some exercises to your favorites list!</Subtitle>
+            )}
+          </Content>
+        </BackgroundImage>
+      </Container>
+      <AppNavigator navigation={navigation} />
     </>
   );
 };

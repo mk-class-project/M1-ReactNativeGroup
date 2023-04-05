@@ -9,6 +9,8 @@ import setupAxiosInterceptors from "./src/config/interceptor";
 import Router from "./src/config/router";
 import { store } from "./src/config/store";
 
+import RNBootSplash from "react-native-bootsplash";
+
 export default App = () => {
   const [theme, setTheme] = useState(BuddyThemes.Ronnie);
 
@@ -18,6 +20,11 @@ export default App = () => {
 
   useEffect(() => {
     setupAxiosInterceptors();
+
+    setTimeout(() => {
+      RNBootSplash.hide({ fade: true });
+    }, 3000);
+    
   }, []);
 
   return (
