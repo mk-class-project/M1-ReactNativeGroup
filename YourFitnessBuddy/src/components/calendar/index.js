@@ -9,7 +9,6 @@ const CalendarBox = () => {
   const screenWidth = Dimensions.get('window').width;
 
   const calendarData = useSelector((state) => state.calendar.calendar);
-  console.log('Calendar data:', calendarData);
 
   const handleScroll = (event) => {
     const scrollX = event.nativeEvent.contentOffset.x;

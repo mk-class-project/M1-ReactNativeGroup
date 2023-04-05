@@ -9,31 +9,22 @@ const ModalCalendar = ({ exercise, visible, onClose }) => {
   const dispatch = useDispatch();
   const calendarData = useSelector((state) => state.calendar.calendar);
 
-  useEffect(() => {
-    console.log("Updated calendar data: ", calendarData);
-  }, [calendarData]);
+  useEffect(() => {}, [calendarData]);
 
   const handleDayToggle = (day) => {
-    console.log("Toggling day:", day); // Add this line
     if (selectedDays.includes(day)) {
       setSelectedDays(selectedDays.filter((d) => d !== day));
     } else {
       setSelectedDays([...selectedDays, day]);
     }
-    console.log("Updated selectedDays:", selectedDays); // Add this line
   };
   
-
   const handleAddToCalendar = () => {
-    console.log('Adding to calendar:', selectedDays, exercise);
     selectedDays.forEach((day) => {
       dispatch(updateCalendar(day, exercise, 'add'));
     });
-    console.log("Dispatched updateCalendar action for days:", selectedDays);
     onClose();
   };
-  
-  
 
   return (
     <Modal
@@ -42,15 +33,8 @@ const ModalCalendar = ({ exercise, visible, onClose }) => {
       visible={visible}
       onRequestClose={onClose}
     >
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        }}
-      >
-        <View style={{ backgroundColor: 'white', borderRadius: 10, padding: 20 }}>
+      <View style={{flex: 1, alignItems: 'center',}}>
+        <View style={{ backgroundColor: 'white', padding: 20 }}>
           <CalendarBox onDayPress={handleDayToggle} />
           <TouchableOpacity onPress={handleAddToCalendar}>
             <Text>Add to Calendar</Text>
