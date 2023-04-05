@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const WeekContainer = styled.View`
   flex: 1;
-  background-color: #fff;
+  background-color: ${props => props.theme.colorWhite};
 `;
 
 export const Day = styled.View`
@@ -14,14 +14,14 @@ export const Day = styled.View`
 
 export const DayText = styled.Text`
   font-size: 24px;
-  color: ${(props) => (props.selected ? 'blue' : 'black')};
+  color: ${(props) => (props.selected ? 'black' : 'blue')};
   margin-bottom: 8px;
 `;
 
 export const DaySeparator = styled.View`
   width: 80%;
   height: 1px;
-  background-color: #ccc;
+  background-color: ${props => props.theme.colorBlack};
   margin-bottom: 8px;
 `;
 

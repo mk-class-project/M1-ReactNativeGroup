@@ -40,13 +40,27 @@ Ce projet consiste en application mobile Android qui permet de suivre son progra
 - Créer un programme fitness
   - par jour
   - par semaine
-- Accèder à la galerie photos pour ajouter son propre thème
 
 20/04 : 
 - Partager son programme fitness sur les réseaux sociaux
 - Compter le nombre de calories brûlées selon l'activité physique
   - Selon le temps passé à faire l'activité
   - Selon le poids de la personne
+- Accèder à la galerie photos pour ajouter son propre thème
+
+
+avoir un système de retour utilisateur (react-native-flash-message), notifier les succès/erreurs.
+
+avoir un systeme de notification push (je vous conseille le paquet Notifee)
+Lancer une notification locale (toujour avec notifee)
+icône de l'app (rien de bien fou)
+
+système multilingue (changer de langue dans l'app | menu) - voir i18n et react-i18n
+Faire des animations 
+
+ajouter de la publicité
+
+utiliser des API du téléphone (Géolocalisation/ Microphone/ Appareil Photo etc...)
 
 ## Instructions pour l'installation et l'utilisation
 

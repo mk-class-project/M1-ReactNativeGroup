@@ -1,41 +1,32 @@
-import { UPDATE_CALENDAR } from '../actions/calendar';
+import { ADD_EXERCISE_TO_DAY, REMOVE_EXERCISE_FROM_DAY } from "../actions/calendar";
 
 const initialState = {
-  calendar: {
-    Mon: [],
-    Tue: [],
-    Wed: [],
-    Thu: [],
-    Fri: [],
-    Sat: [],
-    Sun: [],
-  },
+  Mon: [],
+  Tue: [],
+  Wed: [],
+  Thu: [],
+  Fri: [],
+  Sat: [],
+  Sun: [],
 };
 
-export default (state = initialState, action) => {
+const calendar = (state = initialState, action) => {
   switch (action.type) {
-    case UPDATE_CALENDAR: {
-      const { day, exercise, actionType } = action.payload;
-      const updatedDay = [...state.calendar[day]];
-
-      if (actionType === 'add') {
-        updatedDay.push(exercise);
-      } else if (actionType === 'remove') {
-        const index = updatedDay.findIndex((e) => e.name === exercise.name);
-        if (index !== -1) {
-          updatedDay.splice(index, 1);
-        }
-      }
-
+    case ADD_EXERCISE_TO_DAY:
       return {
         ...state,
-        calendar: {
-          ...state.calendar,
-          [day]: updatedDay,
-        },
+        [action.payload.day]: [...state[action.payload.day], action.payload.exercise],
       };
-    }
+    case REMOVE_EXERCISE_FROM_DAY:
+      return {
+        ...state,
+        [action.payload.day]: state[action.payload.day].filter(
+          (exercise) => exercise.name !== action.payload.exerciseName
+        ),
+      };
     default:
       return state;
   }
 };
+
+export default calendar;
