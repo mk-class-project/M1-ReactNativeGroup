@@ -8,3 +8,14 @@ export const addExerciseToDay = (day, exercise) => ({
   }
 });
 
+export const REMOVE_EXERCISE_FROM_DAY = "REMOVE_EXERCISE_FROM_DAY";
+
+export const removeExerciseFromDay = (day, exerciseName) => ({
+  type: REMOVE_EXERCISE_FROM_DAY,
+  payload: { 
+    day, 
+    exerciseName 
+  },
+});
+
+

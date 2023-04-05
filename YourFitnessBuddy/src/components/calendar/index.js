@@ -29,8 +29,10 @@ const CalendarBox = () => {
             <DayText selected={index === selectedDay}>{day}</DayText>
             <DaySeparator />
             <DayData>
-            {exercises.map((exercise, index) => (
-                <Text key={index}>{exercise.name}</Text>
+              {exercises.map((exercise, index) => (
+                <Text key={index} style={{ marginVertical: 5 }}>
+                  {exercise.name}
+                </Text>
               ))}
             </DayData>
           </Day>
@@ -38,6 +40,7 @@ const CalendarBox = () => {
       </ScrollView>
     </WeekContainer>
   );
+  
 };
 
 export default CalendarBox;
