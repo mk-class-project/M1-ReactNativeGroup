@@ -10,6 +10,7 @@ import Router from "./src/config/router";
 import { store, persistor } from "./src/config/store";
 import { PersistGate } from "redux-persist/integration/react";
 
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import RNBootSplash from "react-native-bootsplash";
 
 import './src/config/translations';
@@ -29,6 +30,8 @@ export default App = () => {
     }, 3000);
 
   }, []);
+
+  MaterialIcons.loadFont();
 
   return (
     <ThemeContext.Provider value={handleThemeChange}>
