@@ -11,6 +11,7 @@ import SearchBar from "../../components/searchBar";
 import Card from "../../components/card";
 
 import Ad from "../../components/ads";
+import { useTranslation } from 'react-i18n-next';
 
 import {
   Container,
@@ -21,6 +22,7 @@ import {
 } from "../../global/styles/global.styles";
 
 export default ExercisesScreen = ({ navigation }) => {
+  const { t } = useTranslation();
   const theme = useTheme();
   const [exercises, setExercises] = useState([]);
   const [favorites, setFavorites] = useState([]);
@@ -72,7 +74,7 @@ export default ExercisesScreen = ({ navigation }) => {
       <BackgroundImage source={theme.image} resizeMode="cover">
         <Overlay />
         <Content>
-          <Title>Let's Get You Jacked !</Title>
+          <Title>{t('title.getYouRipped')}</Title>
           <SearchBar onSearch={handleSearchResults} />
           <FlatList
             data={exercises}

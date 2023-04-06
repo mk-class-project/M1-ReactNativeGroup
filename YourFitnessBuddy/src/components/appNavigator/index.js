@@ -4,10 +4,14 @@ import { NavButton, NavContainer, NavButtonText, ModalButton, ModalContent, Moda
 import ThemeHandler from '../themeHandler';
 import ThemeContext from '../../global/themeContext';
 
+import { useTranslation } from 'react-i18n-next';
+
 const AppNavigator = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const handleThemeChange = useContext(ThemeContext);
+
+  const { t } = useTranslation();
 
   const handleNav = (page) => {
     navigation.navigate(page);
@@ -25,26 +29,26 @@ const AppNavigator = ({ navigation }) => {
     <>
       <NavContainer>
         <NavButton onPress={() => handleNav('home')}>
-          <NavButtonText>Home</NavButtonText>
+          <NavButtonText>{t('menu.home')}</NavButtonText>
         </NavButton>
         <NavButton onPress={toggleDropdown}>
-          <NavButtonText>Workouts</NavButtonText>
+          <NavButtonText>{t('menu.workouts')}</NavButtonText>
         </NavButton>
         {dropdownVisible && (
         <DropdownContainer>
           <DropdownItem onPress={() => handleNav('exercises')}>
-            <NavButtonText>Exercises</NavButtonText>
+            <NavButtonText>{t('menu.exercises')}</NavButtonText>
           </DropdownItem>
           <DropdownItem onPress={() => handleNav('program')} last>
-            <NavButtonText>Program</NavButtonText>
+            <NavButtonText>{t('menu.program')}</NavButtonText>
           </DropdownItem>
         </DropdownContainer>
       )}
         <NavButton onPress={() => handleNav('favorites')}>
-          <NavButtonText>Favorites</NavButtonText>
+          <NavButtonText>{t('menu.favorites')}</NavButtonText>
         </NavButton>
         <ModalButton onPress={toggleModal}>
-          <NavButtonText>Change Theme</NavButtonText>
+          <NavButtonText>{t('menu.changeTheme')}</NavButtonText>
         </ModalButton>
       </NavContainer>
       {modalVisible && (
