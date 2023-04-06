@@ -12,6 +12,8 @@ import { fetchExercises } from "../../api/routes";
 import SearchBar from "../../components/searchBar";
 import Card from "../../components/card";
 
+import { useTranslation } from 'react-i18n-next';
+
 import {
   Container,
   Overlay,
@@ -21,6 +23,7 @@ import {
 } from "../../global/styles/global.styles";
 
 export default ExercisesScreen = ({ navigation }) => {
+  const { t } = useTranslation();
   const theme = useTheme();
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorites.favorites);
@@ -72,7 +75,7 @@ export default ExercisesScreen = ({ navigation }) => {
       <BackgroundImage source={theme.image} resizeMode="cover">
         <Overlay />
         <Content>
-          <Title>Let's Get You Ripped !</Title>
+          <Title>{t('title.getYouRipped')}</Title>
           <SearchBar onSearch={handleSearchResults} />
           {loading ? (
             <ActivityIndicator size="large" color={theme.colorWhite} />

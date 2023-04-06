@@ -3,12 +3,15 @@ import { View, TouchableOpacity, Text, Modal } from 'react-native';
 import CalendarBox from '../calendar';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateCalendar } from '../../actions/calendar';
+import { useTranslation } from 'react-i18n-next';
 
 const ModalCalendar = ({ exercise, visible, onClose }) => {
   const [selectedDays, setSelectedDays] = useState([]);
   const dispatch = useDispatch();
   const calendarData = useSelector((state) => state.calendar.calendar);
 
+  const { t } = useTranslation();
+  
   useEffect(() => {}, [calendarData]);
 
   const handleDayToggle = (day) => {
@@ -37,10 +40,10 @@ const ModalCalendar = ({ exercise, visible, onClose }) => {
         <View style={{ backgroundColor: 'white', padding: 20 }}>
           <CalendarBox onDayPress={handleDayToggle} />
           <TouchableOpacity onPress={handleAddToCalendar}>
-            <Text>Add to Calendar</Text>
+            <Text>{t('calendar.addCalendar')}</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={onClose}>
-            <Text>Cancel</Text>
+            <Text>{t('message.cancel')}</Text>
           </TouchableOpacity>
         </View>
       </View>

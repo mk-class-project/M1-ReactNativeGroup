@@ -12,6 +12,8 @@ import { PersistGate } from "redux-persist/integration/react";
 
 import RNBootSplash from "react-native-bootsplash";
 
+import './src/config/translations';
+
 export default App = () => {
   const [theme, setTheme] = useState(BuddyThemes.Ronnie);
 

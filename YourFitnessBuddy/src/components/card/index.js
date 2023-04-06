@@ -7,11 +7,14 @@ import { addToFavorites, removeFromFavorites } from "../../actions/favorites";
 import { addExerciseToDay } from "../../actions/calendar";
 
 import { CardContainer, Header, Type, Title, Subtitle, Body, Instructions } from './styles';
+import { useTranslation } from 'react-i18n-next';
 
 const Card = ({ name, type, muscle, equipment, difficulty, instructions, isFavorite, onFavoriteChange }) => {
   const [favorite, setIsFavorite] = useState(isFavorite);
   const dispatch = useDispatch();
   const [selectedDays, setSelectedDays] = useState([]);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     setIsFavorite(isFavorite);
@@ -67,13 +70,13 @@ const Card = ({ name, type, muscle, equipment, difficulty, instructions, isFavor
         <Title>{name}<Type> - {type}</Type></Title>
       </Header>
       <Body>
-        <Subtitle>Muscle: {muscle}</Subtitle>
-        <Subtitle>Equipment: {equipment}</Subtitle>
-        <Subtitle>Difficulty: {difficulty}</Subtitle>
+        <Subtitle>{t('filter.muscle')}: {muscle}</Subtitle>
+        <Subtitle>{t('filter.equipment')}: {equipment}</Subtitle>
+        <Subtitle>{t('filter.difficulty')}: {difficulty}</Subtitle>
         <Instructions>{instructions}</Instructions>
       </Body>
       <TouchableOpacity onPress={handleFavorite}>
-        <Text>{favorite ? 'Remove from Favorites' : 'Add to Favorites'}</Text>
+        <Text>{favorite ? "{t('favorites.addFavorites')}" : "{t('favorites.removeFavorites')}"}</Text>
       </TouchableOpacity>
       <SectionedMultiSelect
         items={daysOfWeek}
@@ -83,7 +86,7 @@ const Card = ({ name, type, muscle, equipment, difficulty, instructions, isFavor
         showChips={false}
         showCancelButton={true}
         showRemoveAll={false}
-        selectText="Add to Days"
+        selectText={t('days.addDays')}
         IconRenderer={MaterialIcons}
       />
     </CardContainer>

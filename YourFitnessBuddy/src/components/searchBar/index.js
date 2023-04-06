@@ -17,10 +17,14 @@ import { fetchExercises, fetchExercisesByMuscleAndDifficulty } from '../../api/r
 import { searchBar } from '../../actions/search';
 import { useDispatch } from 'react-redux';
 
+import { useTranslation } from 'react-i18n-next';
+
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('');
   const [difficulty, setDifficulty] = useState('beginner');
   const diff = ['beginner', 'intermediate', 'expert'];
+
+  const { t } = useTranslation();
 
   const dispatch = useDispatch();
 
@@ -47,7 +51,7 @@ const SearchBar = ({ onSearch }) => {
   return (
     <SearchContainer>
       <Text>
-        Choose your muscle group buddy!
+        {t('title.chooseMuscle')}
       </Text>
       <InputGroup>
         <SearchInput
@@ -72,7 +76,7 @@ const SearchBar = ({ onSearch }) => {
           </RadioButton.Group>
         </RadioContainer>
       </InputGroup>
-      <SearchButton title="Yeah Buddy!" onPress={handleSearch} />
+      <SearchButton title={t('message.yeahBuddy')} onPress={handleSearch} />
     </SearchContainer>
   );
 };

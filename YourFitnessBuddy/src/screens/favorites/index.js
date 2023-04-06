@@ -10,11 +10,14 @@ import Card from "../../components/card";
 
 import { Container, Overlay, Content, Subtitle, Title, BackgroundImage } from "../../global/styles/global.styles";
 
+import { useTranslation } from 'react-i18n-next';
+
 export default FavoritesScreen = ({ navigation }) => {
   const theme = useTheme();
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorites.favorites);
 
+  const {t} = useTranslation();
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => { });
 
@@ -47,7 +50,7 @@ export default FavoritesScreen = ({ navigation }) => {
         <BackgroundImage source={theme.image} resizeMode="cover">
           <Overlay />
           <Content>
-            <Title>You love those exercises!</Title>
+            <Title>{t('title.loveExercices')}</Title>
             {favorites.length > 0 ? (
               <FlatList
                 data={favorites}
@@ -55,7 +58,7 @@ export default FavoritesScreen = ({ navigation }) => {
                 keyExtractor={(item) => item.name}
               />
             ) : (
-              <Subtitle style={{ color: theme.colorWhite }}>No favorites yet. Add some exercises to your favorites list!</Subtitle>
+              <Subtitle style={{ color: theme.colorWhite }}>{t('message.noFavorites')}</Subtitle>
             )}
           </Content>
         </BackgroundImage>
