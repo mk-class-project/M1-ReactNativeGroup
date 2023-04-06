@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, ActivityIndicator } from "react-native";
+import { Button, ActivityIndicator, Text } from "react-native";
 
 import { fetchInspirationalQuotes } from "../../api/routes";
 
@@ -11,7 +11,7 @@ import Quote from "../../components/quote";
 
 import { Container, Overlay, Content, Title, Subtitle, BackgroundImage } from "../../global/styles/global.styles";
 
-import { useTranslation } from 'react-i18n-next';
+import { useTranslation } from 'react-i18next';
 
 const HomeScreen = ({ navigation, route }) => {
   const { t, i18n } = useTranslation();

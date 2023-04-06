@@ -4,7 +4,7 @@ import { NavButton, NavContainer, NavButtonText, ModalButton, ModalContent, Moda
 import ThemeHandler from '../themeHandler';
 import ThemeContext from '../../global/themeContext';
 
-import { useTranslation } from 'react-i18n-next';
+import { useTranslation } from 'react-i18next';
 
 const AppNavigator = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);

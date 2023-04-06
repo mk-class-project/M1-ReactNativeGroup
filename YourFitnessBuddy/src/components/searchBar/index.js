@@ -17,7 +17,7 @@ import { fetchExercises, fetchExercisesByMuscleAndDifficulty } from '../../api/r
 import { searchBar } from '../../actions/search';
 import { useDispatch } from 'react-redux';
 
-import { useTranslation } from 'react-i18n-next';
+import { useTranslation } from 'react-i18next';
 
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('');

@@ -7,7 +7,7 @@ import Calendar from "../../components/calendar";
 
 import { Container, Overlay, Content, Title, BackgroundImage } from "../../global/styles/global.styles";
 
-import { useTranslation } from 'react-i18n-next';
+import { useTranslation } from 'react-i18next';
 
 const ProgramScreen = ({ navigation }) => {
     const theme = useTheme();
