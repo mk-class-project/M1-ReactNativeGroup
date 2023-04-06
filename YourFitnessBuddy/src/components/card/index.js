@@ -7,7 +7,7 @@ import { addToFavorites, removeFromFavorites } from "../../actions/favorites";
 import { addExerciseToDay } from "../../actions/calendar";
 
 import { CardContainer, Header, Type, Title, Subtitle, Body, Instructions } from './styles';
-import { useTranslation } from 'react-i18n-next';
+import { useTranslation } from 'react-i18next';
 
 const Card = ({ name, type, muscle, equipment, difficulty, instructions, isFavorite, onFavoriteChange }) => {
   const [favorite, setIsFavorite] = useState(isFavorite);
@@ -76,7 +76,7 @@ const Card = ({ name, type, muscle, equipment, difficulty, instructions, isFavor
         <Instructions>{instructions}</Instructions>
       </Body>
       <TouchableOpacity onPress={handleFavorite}>
-        <Text>{favorite ? "{t('favorites.addFavorites')}" : "{t('favorites.removeFavorites')}"}</Text>
+        <Text>{favorite ? t('favorites.addFavorites') : t('favorites.removeFavorites')}</Text>
       </TouchableOpacity>
       <SectionedMultiSelect
         items={daysOfWeek}

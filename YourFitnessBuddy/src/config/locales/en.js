@@ -4,7 +4,7 @@ export default {
             home: 'Home',
             program: 'Program',
             workouts : 'Workouts',
-            exercices: 'Exercises',
+            exercises: 'Exercises',
             favorites: 'Favorites',
             changeTheme: 'Change theme',
         },

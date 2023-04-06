@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Text, Modal } from 'react-native';
 import CalendarBox from '../calendar';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateCalendar } from '../../actions/calendar';
-import { useTranslation } from 'react-i18n-next';
+import { useTranslation } from 'react-i18next';
 
 const ModalCalendar = ({ exercise, visible, onClose }) => {
   const [selectedDays, setSelectedDays] = useState([]);

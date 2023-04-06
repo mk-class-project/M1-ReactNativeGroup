@@ -12,7 +12,7 @@ import { fetchExercises } from "../../api/routes";
 import SearchBar from "../../components/searchBar";
 import Card from "../../components/card";
 
-import { useTranslation } from 'react-i18n-next';
+import { useTranslation } from 'react-i18next';
 
 import {
   Container,

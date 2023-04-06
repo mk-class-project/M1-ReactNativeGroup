@@ -10,7 +10,7 @@ import Card from "../../components/card";
 
 import { Container, Overlay, Content, Subtitle, Title, BackgroundImage } from "../../global/styles/global.styles";
 
-import { useTranslation } from 'react-i18n-next';
+import { useTranslation } from 'react-i18next';
 
 export default FavoritesScreen = ({ navigation }) => {
   const theme = useTheme();
