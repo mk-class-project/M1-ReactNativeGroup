@@ -14,7 +14,7 @@ import { Container, Overlay, Content, Title, Subtitle, BackgroundImage } from ".
 import { useTranslation } from 'react-i18next';
 
 const HomeScreen = ({ navigation, route }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const theme = useTheme();
   const { handleThemeChange } = route.params;
 
@@ -39,15 +39,9 @@ const HomeScreen = ({ navigation, route }) => {
     fetchQuotes();
   }, []);
 
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language);
-  };
 
   return (
     <Container>
-       <Text>{t('language.changeLanguage')}</Text>
-      <Button title={t('language.changeToEnglish')} onPress={() => changeLanguage('en')} />
-      <Button title={t('language.changeToFrench')} onPress={() => changeLanguage('fr')} />
       <BackgroundImage source={theme.image} resizeMode="cover">
         <Overlay />
         <Content>
