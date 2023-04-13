@@ -7,6 +7,7 @@ export default {
             exercises: 'Exercises',
             favorites: 'Favorites',
             changeTheme: 'Change theme',
+            options: 'Options',
         },
         title: {
             yourFitnessBuddy: 'Your Fitness Buddy',

@@ -3,6 +3,7 @@ import { NavButton, NavContainer, NavButtonText, ModalButton, ModalContent, Moda
 
 import ThemeHandler from '../themeHandler';
 import ThemeContext from '../../global/themeContext';
+import LanguageHandler from '../languageHandler';
 
 import { useTranslation } from 'react-i18next';
 
@@ -47,17 +48,34 @@ const AppNavigator = ({ navigation }) => {
         <NavButton onPress={() => handleNav('favorites')}>
           <NavButtonText>{t('menu.favorites')}</NavButtonText>
         </NavButton>
-        <ModalButton onPress={toggleModal}>
-          <NavButtonText>{t('menu.changeTheme')}</NavButtonText>
-        </ModalButton>
-      </NavContainer>
-      {modalVisible && (
+        <NavButton onPress={toggleDropdown}>
+          <NavButtonText>{t('menu.options')}</NavButtonText>
+        </NavButton>
+        {dropdownVisible && (
+        <DropdownContainer>
+          <DropdownItem onPress={() => handleNav('changeTheme')}>
+            <NavButtonText>{t('menu.changeTheme')}</NavButtonText>
+          </DropdownItem>
+          {modalVisible && (
         <ModalOverlay onPress={toggleModal}>
           <ModalContent>
             <ThemeHandler handleThemeChange={handleThemeChange} />
           </ModalContent>
         </ModalOverlay>
       )}
+          <DropdownItem onPress={() => handleNav('changeLanguage')} last>
+            <NavButtonText>{t('language.changeLanguage')}</NavButtonText>
+          </DropdownItem>
+          {modalVisible && (
+        <ModalOverlay onPress={toggleModal}>
+          <ModalContent>
+            <LanguageHandler/>
+          </ModalContent>
+        </ModalOverlay>
+      )}
+        </DropdownContainer>
+      )}
+      </NavContainer>
     </>
   );
 };
