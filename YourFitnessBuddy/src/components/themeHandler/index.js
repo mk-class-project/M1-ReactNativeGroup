@@ -1,12 +1,13 @@
 import React from "react";
-import { View, Button } from "react-native";
+import { View } from "react-native";
+import { ModalButton } from './styles';
 
 const ThemeHandler = ({ handleThemeChange }) => {
   return (
     <View>
-      <Button title="Arnold" onPress={() => handleThemeChange("Arnold")} />
-      <Button title="Ronnie" onPress={() => handleThemeChange("Ronnie")} />
-      <Button title="Cbum" onPress={() => handleThemeChange("Cbum")} />
+      <ModalButton title="Arnold" onPress={() => handleThemeChange("Arnold")} />
+      <ModalButton title="Ronnie" onPress={() => handleThemeChange("Ronnie")} />
+      <ModalButton title="Cbum" onPress={() => handleThemeChange("Cbum")} />
     </View>
   );
 };
