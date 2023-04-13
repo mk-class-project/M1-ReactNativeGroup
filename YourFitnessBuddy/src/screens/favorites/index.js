@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FlatList, Text } from "react-native";
+import { FlatList } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromFavorites } from "../../actions/favorites";
 

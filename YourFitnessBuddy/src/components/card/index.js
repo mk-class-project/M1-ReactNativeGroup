@@ -14,8 +14,6 @@ const Card = ({ name, type, muscle, equipment, difficulty, instructions, isFavor
   const dispatch = useDispatch();
   const [selectedDays, setSelectedDays] = useState([]);
 
-  const { t } = useTranslation();
-
   useEffect(() => {
     setIsFavorite(isFavorite);
   }, [isFavorite]);

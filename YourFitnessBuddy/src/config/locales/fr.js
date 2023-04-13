@@ -3,7 +3,7 @@ export default {
         menu: {
             home: 'Accueil',
             program: 'Programme',
-            workouts: 'Séances d \'entraînement',
+            workouts: 'Séances',
             exercises: 'Exercices',
             favorites: 'Favoris',
             changeTheme: 'Changer le thème',
@@ -42,12 +42,12 @@ export default {
             removeFavorites: 'Supprimer des favoris',
         },
         days: {
-            addDays: 'Ajouter à des journées',
+            addDays: 'Ajouter au programme',
         },
         language: {
             changeLanguage: 'Change the language',
-            changeToEnglish: 'Changer en anglais',
-            changeToFrench: 'Changer en français',
+            changeToEnglish: 'English',
+            changeToFrench: 'Français',
         }
     },
   };
