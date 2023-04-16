@@ -1,7 +1,9 @@
 import styled from 'styled-components/native';
 import AdvertisementImage from "../../images/ArnoldBuddy.jpg";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, onClose } from 'react';
+import { connect } from 'react-redux';
 import { Modal, View, Text, Image, TouchableOpacity } from 'react-native';
+import { startCounter } from './actions';
 
 
 const AdvertisementContainer = styled.View`
@@ -46,7 +48,8 @@ const CountdownText = styled.Text`
   font-size: 16px;
 `;
 
-const AdvertisementModal = ({ visible, onClose }) => {
+const AdvertisementModal = () => {
+  const visible =true;
   const [modalVisible, setModalVisible] = useState(visible);
   const [counter, setCounter] = useState(5);
   
@@ -56,7 +59,7 @@ const AdvertisementModal = ({ visible, onClose }) => {
     if (visible && counter > 0) {
       timeout = setTimeout(() => {
         setCounter((prevCounter) => prevCounter - 1);
-      }, 5000);
+      }, 1000);
     }
 
     return () => {
@@ -66,10 +69,8 @@ const AdvertisementModal = ({ visible, onClose }) => {
 
   useEffect(() => {
     if (counter === 0) {
-      setModalVisible(false);
-      onClose();
     }
-  }, [counter, onClose]);
+  }, []);
 
   const handleClose = () => {
     setModalVisible(false);
@@ -82,13 +83,10 @@ const AdvertisementModal = ({ visible, onClose }) => {
         <AdvertisementContainer>
           <AdvertisementImageStyled source={AdvertisementImage} />
           <AdvertisementText>Achetez notre nouveau produit dès maintenant!</AdvertisementText>
-            <CountdownText>{`${counter} ${counter > 1 ? '  ' : 
-            <CloseButton onPress={handleClose}>
-              <CloseButtonText>Fermer</CloseButtonText>
-            </CloseButton>
+            <CountdownText>{`${counter} ${counter > 1 ? '  ' : ''
+            
             }`}</CountdownText>
         </AdvertisementContainer>
-  
       </ModalContainer>
     </Modal>
   );
