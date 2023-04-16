@@ -10,7 +10,7 @@ import { fetchExercises } from "../../api/routes";
 import SearchBar from "../../components/searchBar";
 import Card from "../../components/card";
 
-import A from '../../components/Avertissement';
+import Ad from "../../components/ads";
 
 import {
   Container,
@@ -82,7 +82,7 @@ export default ExercisesScreen = ({ navigation }) => {
         </Content>
       </BackgroundImage>
       <AppNavigator navigation={navigation} />
-      <A/>
+      <Ad />
     </Container>
   );
 };
