@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import AdvertisementImage from "../../images/ArnoldBuddy.jpg";
+import AdvertisementImage from "../../images/wheypub.jpg";
 import React, { useEffect, useState, onClose } from 'react';
 import { connect } from 'react-redux';
 import { Modal, View, Text, Image, TouchableOpacity } from 'react-native';
@@ -12,12 +12,12 @@ const AdvertisementContainer = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-radius: 5px;
+  border-radius: 3px;
 `;
 
 const AdvertisementImageStyled = styled.Image`
-  width: 60px;
-  height: 60px;
+  width: 200px;
+  height: 300px;
   margin-right: 10px;
 `;
 
@@ -69,6 +69,7 @@ const AdvertisementModal = () => {
 
   useEffect(() => {
     if (counter === 0) {
+      handleClose();
     }
   }, []);
 
@@ -82,11 +83,14 @@ const AdvertisementModal = () => {
       <ModalContainer>
         <AdvertisementContainer>
           <AdvertisementImageStyled source={AdvertisementImage} />
-          <AdvertisementText>Achetez notre nouveau produit dès maintenant!</AdvertisementText>
-            <CountdownText>{`${counter} ${counter > 1 ? '  ' : ''
-            
-            }`}</CountdownText>
+          <AdvertisementText>-10% offerts</AdvertisementText>
+          {counter > 0 ? (
+          <CountdownText>{counter} </CountdownText>
+        ) : (
+          <CountdownText onPress={handleClose}>X</CountdownText>
+        )}
         </AdvertisementContainer>
+
       </ModalContainer>
     </Modal>
   );
