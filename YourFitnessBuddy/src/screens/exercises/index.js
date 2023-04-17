@@ -10,7 +10,8 @@ import { fetchExercises } from "../../api/routes";
 import SearchBar from "../../components/searchBar";
 import Card from "../../components/card";
 
-import Ad from "../../components/ads";
+// import Ad from "../../components/ads";
+import Ad from "../../components/ad";
 import { useTranslation } from 'react-i18next';
 
 import {
@@ -26,6 +27,7 @@ export default ExercisesScreen = ({ navigation }) => {
   const theme = useTheme();
   const [exercises, setExercises] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   useEffect(() => {
     const fetchFavoritesData = async () => {
@@ -52,9 +54,12 @@ export default ExercisesScreen = ({ navigation }) => {
     fetchExercisesData();
   }, []);
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   const renderItem = ({ item }) => {
     const isFavorite = favorites.some(favorite => favorite.name === item.name);
-    
     return (
       <Card
         key={item.name}
@@ -84,7 +89,7 @@ export default ExercisesScreen = ({ navigation }) => {
         </Content>
       </BackgroundImage>
       <AppNavigator navigation={navigation} />
-      <Ad />
+      {isModalOpen && <Ad closeModal={closeModal} />}
     </Container>
   );
 };
