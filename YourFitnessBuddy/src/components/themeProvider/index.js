@@ -15,17 +15,19 @@ export default BuddyThemes = {
   Arnold: {
     image: imageA,
     title: "Arnold Schwarzenegger",
-    colorGrey: "#A9A9A9 ",
-    colorWhite: "#FFFFFF",
+    colorGrey: "#A9A9A9",
+    colorWhite: "#F5F5F5",
     colorBlack: "#000000",
-    colorBlockOpacity: "rgba(0, 0, 0, 0.2)",
+    colorBlockOpacity: "rgba(0, 0, 0, 0.7)",
+    colorWhiteOpcaity: "rgba(255, 255, 255, 0.8)",
   },
   Cbum: {
     image: imageC,
     title: "Chris Bumstead",
-    colorGrey: "#A9A9A9 ",
-    colorWhite: "#FFFFFF",
+    colorGrey: "#A9A9A9",
+    colorWhite: "#F5F5F5",
     colorBlack: "#000000",
-    colorBlockOpacity: "rgba(0, 0, 0, 0.2)",
+    colorBlockOpacity: "rgba(0, 0, 0, 0.7)",
+    colorWhiteOpcaity: "rgba(255, 255, 255, 0.8)",
   }
 };

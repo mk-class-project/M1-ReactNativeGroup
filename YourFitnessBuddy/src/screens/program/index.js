@@ -7,15 +7,18 @@ import Calendar from "../../components/calendar";
 
 import { Container, Overlay, Content, Title, BackgroundImage } from "../../global/styles/global.styles";
 
+import { useTranslation } from 'react-i18next';
+
 const ProgramScreen = ({ navigation }) => {
     const theme = useTheme();
+    const { t } = useTranslation();
     
     return (
         <Container>
         <BackgroundImage source={theme.image} resizeMode="cover">
             <Overlay />
             <Content>
-            <Title>Program</Title>
+            <Title>{t('menu.program')}</Title>
             <Calendar />
             </Content>
         </BackgroundImage>

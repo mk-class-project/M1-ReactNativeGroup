@@ -1,7 +1,6 @@
 import AdImage from "../../images/wheypub.jpg";
 import React, { useEffect, useState } from 'react';
 import { Modal } from 'react-native';
-import { startCounter } from './actions';
 
 import { AdContainer, AdImageStyled, AdText, CountdownText, ModalContainer } from './styles';
 

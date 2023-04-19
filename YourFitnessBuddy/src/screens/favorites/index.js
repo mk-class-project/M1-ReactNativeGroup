@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
-import { FlatList, Text } from "react-native";
+import { FlatList } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromFavorites } from "../../actions/favorites";
-
 import { useTheme } from "styled-components/native";
-
 import AppNavigator from "../../components/appNavigator";
 import Card from "../../components/card";
-
 import { Container, Overlay, Content, Subtitle, Title, BackgroundImage } from "../../global/styles/global.styles";
+import { useTranslation } from 'react-i18next';
+import { showMessage } from "react-native-flash-message";
 
 export default FavoritesScreen = ({ navigation }) => {
   const theme = useTheme();
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorites.favorites);
 
+  const {t} = useTranslation();
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => { });
 
@@ -23,6 +23,11 @@ export default FavoritesScreen = ({ navigation }) => {
 
   const handleRemoveFromFavorites = (name) => {
     dispatch(removeFromFavorites(name));
+    showMessage({
+      message: t('message.favoriteRemoved'),
+      type: "success",
+      icon: "success",
+    });
   };
 
   const renderItem = ({ item }) => (
@@ -47,7 +52,7 @@ export default FavoritesScreen = ({ navigation }) => {
         <BackgroundImage source={theme.image} resizeMode="cover">
           <Overlay />
           <Content>
-            <Title>You love those exercises!</Title>
+            <Title>{t('title.loveExercices')}</Title>
             {favorites.length > 0 ? (
               <FlatList
                 data={favorites}
@@ -55,7 +60,7 @@ export default FavoritesScreen = ({ navigation }) => {
                 keyExtractor={(item) => item.name}
               />
             ) : (
-              <Subtitle style={{ color: theme.colorWhite }}>No favorites yet. Add some exercises to your favorites list!</Subtitle>
+              <Subtitle style={{ color: theme.colorWhite }}>{t('message.noFavorites')}</Subtitle>
             )}
           </Content>
         </BackgroundImage>

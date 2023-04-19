@@ -10,7 +10,9 @@ import { fetchExercises } from "../../api/routes";
 import SearchBar from "../../components/searchBar";
 import Card from "../../components/card";
 
-import Ad from "../../components/ads";
+// import Ad from "../../components/ads";
+import Ad from "../../components/ad";
+import { useTranslation } from 'react-i18next';
 
 import {
   Container,
@@ -21,9 +23,11 @@ import {
 } from "../../global/styles/global.styles";
 
 export default ExercisesScreen = ({ navigation }) => {
+  const { t } = useTranslation();
   const theme = useTheme();
   const [exercises, setExercises] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   useEffect(() => {
     const fetchFavoritesData = async () => {
@@ -50,9 +54,12 @@ export default ExercisesScreen = ({ navigation }) => {
     fetchExercisesData();
   }, []);
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   const renderItem = ({ item }) => {
     const isFavorite = favorites.some(favorite => favorite.name === item.name);
-    
     return (
       <Card
         key={item.name}
@@ -72,7 +79,7 @@ export default ExercisesScreen = ({ navigation }) => {
       <BackgroundImage source={theme.image} resizeMode="cover">
         <Overlay />
         <Content>
-          <Title>Let's Get You Jacked !</Title>
+          <Title>{t('title.getYouRipped')}</Title>
           <SearchBar onSearch={handleSearchResults} />
           <FlatList
             data={exercises}
@@ -82,7 +89,7 @@ export default ExercisesScreen = ({ navigation }) => {
         </Content>
       </BackgroundImage>
       <AppNavigator navigation={navigation} />
-      <Ad />
+      {isModalOpen && <Ad closeModal={closeModal} />}
     </Container>
   );
 };

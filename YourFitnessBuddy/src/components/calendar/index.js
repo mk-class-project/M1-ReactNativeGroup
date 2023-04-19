@@ -29,9 +29,9 @@ const CalendarBox = () => {
             <DayText selected={index === selectedDay}>{day}</DayText>
             <DaySeparator />
             <DayData>
-              {exercises.map((exercise, index) => (
+              {Array.isArray(exercises) && exercises.map((exercise, index) => (
                 <Text key={index} style={{ marginVertical: 5 }}>
-                  {exercise.name} - 
+                  {exercise.name} -
                 </Text>
               ))}
             </DayData>
@@ -40,7 +40,7 @@ const CalendarBox = () => {
       </ScrollView>
     </WeekContainer>
   );
-  
+
 };
 
 export default CalendarBox;

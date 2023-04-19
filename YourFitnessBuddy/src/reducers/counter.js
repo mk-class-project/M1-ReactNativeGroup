@@ -1,15 +1,15 @@
-import { INCREMENT_COUNTER } from '../actions/counter';
+import { DECREMENT_COUNTER } from "../actions/counter";
 
 const initialState = {
-  value: 0,
+  counter: 5,
 };
 
-export default (state = initialState, action) => {
+export const counterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case INCREMENT_COUNTER:
+    case DECREMENT_COUNTER:
       return {
         ...state,
-        value: state.value + 1,
+        counter: state.counter - 1,
       };
     default:
       return state;

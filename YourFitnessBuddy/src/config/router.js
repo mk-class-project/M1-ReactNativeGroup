@@ -8,6 +8,7 @@ import HomeScreen from '../screens/home';
 import FavoritesScreen from '../screens/favorites';
 import ExercisesScreen from '../screens/exercises';
 import ProgramScreen from '../screens/program';
+import OptionsScreen from '../screens/options';
 
 const Stack = createStackNavigator();
 
@@ -38,6 +39,11 @@ export default Router = ({ handleThemeChange }) => {
           <Stack.Screen
             name="program"
             component={ProgramScreen}
+            initialParams={{ handleThemeChange: handleThemeChange }}
+          />
+          <Stack.Screen
+            name="options"
+            component={OptionsScreen}
             initialParams={{ handleThemeChange: handleThemeChange }}
           />
         </Stack.Navigator>

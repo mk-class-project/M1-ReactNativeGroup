@@ -3,11 +3,17 @@ import { NavButton, NavContainer, NavButtonText, ModalButton, ModalContent, Moda
 
 import ThemeHandler from '../themeHandler';
 import ThemeContext from '../../global/themeContext';
+import LanguageHandler from '../languageHandler';
+
+import { useTranslation } from 'react-i18next';
 
 const AppNavigator = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [dropdownVisibleB, setDropdownVisibleB] = useState(false);
   const handleThemeChange = useContext(ThemeContext);
+
+  const { t } = useTranslation();
 
   const handleNav = (page) => {
     navigation.navigate(page);
@@ -21,39 +27,41 @@ const AppNavigator = ({ navigation }) => {
     setDropdownVisible(!dropdownVisible);
   };
 
+  const toggleDropdownB = () => {
+    setDropdownVisibleB(!dropdownVisibleB);
+  };
+
   return (
     <>
       <NavContainer>
+
         <NavButton onPress={() => handleNav('home')}>
-          <NavButtonText>Home</NavButtonText>
+          <NavButtonText>{t('menu.home')}</NavButtonText>
         </NavButton>
+
         <NavButton onPress={toggleDropdown}>
-          <NavButtonText>Workouts</NavButtonText>
+          <NavButtonText>{t('menu.workouts')}</NavButtonText>
         </NavButton>
         {dropdownVisible && (
-        <DropdownContainer>
-          <DropdownItem onPress={() => handleNav('exercises')}>
-            <NavButtonText>Exercises</NavButtonText>
-          </DropdownItem>
-          <DropdownItem onPress={() => handleNav('program')} last>
-            <NavButtonText>Program</NavButtonText>
-          </DropdownItem>
-        </DropdownContainer>
-      )}
+          <DropdownContainer>
+            <DropdownItem onPress={() => handleNav('exercises')}>
+              <NavButtonText>{t('menu.exercises')}</NavButtonText>
+            </DropdownItem>
+            <DropdownItem onPress={() => handleNav('program')} last>
+              <NavButtonText>{t('menu.program')}</NavButtonText>
+            </DropdownItem>
+          </DropdownContainer>
+        )}
+
         <NavButton onPress={() => handleNav('favorites')}>
-          <NavButtonText>Favorites</NavButtonText>
+          <NavButtonText>{t('menu.favorites')}</NavButtonText>
         </NavButton>
-        <ModalButton onPress={toggleModal}>
-          <NavButtonText>Change Theme</NavButtonText>
-        </ModalButton>
+
+
+        <NavButton onPress={() => handleNav('options')}>
+          <NavButtonText>{t('menu.options')}</NavButtonText>
+        </NavButton>
       </NavContainer>
-      {modalVisible && (
-        <ModalOverlay onPress={toggleModal}>
-          <ModalContent>
-            <ThemeHandler handleThemeChange={handleThemeChange} />
-          </ModalContent>
-        </ModalOverlay>
-      )}
     </>
   );
 };
