@@ -4,7 +4,7 @@ const initialState = {
   counter: 5,
 };
 
-export const counterReducer = (state = initialState, action) => {
+const counter = (state = initialState, action) => {
   switch (action.type) {
     case DECREMENT_COUNTER:
       return {
@@ -15,3 +15,5 @@ export const counterReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default counter;

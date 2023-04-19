@@ -4,7 +4,7 @@ const initialState = {
     search: '',
 };
 
-export default (state = initialState, action) => {
+const search = (state = initialState, action) => {
     switch (action.type) {
       case SEARCH_BAR:
         return {
@@ -15,3 +15,5 @@ export default (state = initialState, action) => {
         return state;
     }
   };
+
+export default search;

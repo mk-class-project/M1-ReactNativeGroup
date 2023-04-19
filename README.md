@@ -42,21 +42,23 @@ Ce projet consiste en application mobile Android qui permet de suivre son progra
   - par semaine
 
 20/04 : 
-- Faire des animations <span style="color: black;">**(ALL)**
-- Partager son programme fitness sur les réseaux sociaux <span style="color: pink;">**(Zaki)**
-- Compter le nombre de calories brûlées selon l'activité physique <span style="color: yellow;">**(MK)**
+- Faire des animations
+- Partager son programme fitness sur les réseaux sociaux
+- Compter le nombre de calories brûlées selon l'activité physique
 
   - Selon le temps passé à faire l'activité
   - Selon le poids de la personne
-- Notifications (paquet Notifee) <span style="color: red;">**(Amir)**
-- Publicités <span style="color: lightgreen;">**(Haig)**
-- Accèder à la galerie photos pour ajouter son propre thème (Appareil Photo, Galerie Photos) <span style="color: lightgreen;">**(Haig)**
-- Avoir un système de retour utilisateur (react-native-flash-message), notifier les succès/erreurs. <span style="color: darkblue;">**(Libre)**
-- Système multilingue <span style="color: skyblue;">**(Elodie)**
+- Notifications (paquet Notifee)
+- Publicités
+- Accèder à la galerie photos pour ajouter son propre thème (Appareil Photo, Galerie Photos)
+- Avoir un système de retour utilisateur (react-native-flash-message), notifier les succès/erreurs.
+- Système multilingue
 
-## Instructions pour l'installation et l'utilisation
+## Rendu
 
-[Les instructions pour installer et utiliser le projet].
+APK disponible dans les releases
+
+[Video Youtube](https://youtu.be/AyWJRavYTCM)
 
 ## Liens
 
