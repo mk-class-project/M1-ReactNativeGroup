@@ -4,7 +4,7 @@ const initialState = {
   quotes: [],
 };
 
-const quotesReducer = (state = initialState, action) => {
+const quotes = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_QUOTES_SUCCESS:
       return {
@@ -16,4 +16,4 @@ const quotesReducer = (state = initialState, action) => {
   }
 };
 
-export default quotesReducer;
+export default quotes;

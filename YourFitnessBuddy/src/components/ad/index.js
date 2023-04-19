@@ -5,7 +5,7 @@ import { decrementCounter } from '../../actions/counter';
 
 import { Modal } from 'react-native';
 
-import { AdContainer, AdImageStyled, AdText, CountdownText, ModalContainer } from './styles';
+import { AdContainer, AdImageStyled, AdText, CountdownText, ModalContainer, BigFriendlyButton } from './styles';
 import AdImage from '../../images/wheypub.jpg';
 
 const Ad = ({ closeModal }) => {
@@ -33,9 +33,9 @@ const Ad = ({ closeModal }) => {
           {counter > 0 ? (
             <CountdownText>{counter} </CountdownText>
           ) : (
-            <TouchableOpacity onPress={closeModal}>
+            <BigFriendlyButton onPress={closeModal}>
               <CountdownText>X</CountdownText>
-            </TouchableOpacity>
+            </BigFriendlyButton>
           )}
         </AdContainer>
       </ModalContainer>

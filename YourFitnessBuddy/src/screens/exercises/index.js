@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FlatList } from "react-native";
-
 import { useTheme } from "styled-components/native";
 import AsyncStorage from '@react-native-async-storage/async-storage/src/AsyncStorage';
-
 import AppNavigator from "../../components/appNavigator";
 import { fetchExercises } from "../../api/routes";
-
 import SearchBar from "../../components/searchBar";
 import Card from "../../components/card";
-
-// import Ad from "../../components/ads";
 import Ad from "../../components/ad";
 import { useTranslation } from 'react-i18next';
 

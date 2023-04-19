@@ -41,3 +41,10 @@ export const ModalContainer = styled.View`
 export const CountdownText = styled.Text`
   font-size: 16px;
 `;
+
+export const BigFriendlyButton = styled.TouchableOpacity`
+  background-color: red;
+  padding: 10px;
+  border-radius: 3px;
+  margin-top: 10px;
+`;
