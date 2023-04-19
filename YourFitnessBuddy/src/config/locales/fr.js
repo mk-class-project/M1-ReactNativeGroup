@@ -21,6 +21,9 @@ export default {
             cancel: 'Fermer',
             yeahBuddy: 'Ouais mec!',
             getAnotherQuote: 'Obtenir une autre citation',
+            sendQuoteNotification: 'Notification de citation',
+            themeChanged: 'Thème changé',
+            languageChanged: 'Langue changée',
         },   
         calendar: {
             monday: 'Lundi',

@@ -21,6 +21,9 @@ export default {
             cancel: 'Cancel',
             yeahBuddy: 'Yeah Buddy!',
             getAnotherQuote: 'Get another quote',
+            sendQuoteNotification: 'Send quote notification',
+            themeChanged: 'Theme changed',
+            languageChanged: 'Language changed',
         },
         calendar: {
             monday: 'Monday',
@@ -48,6 +51,7 @@ export default {
             changeLanguage: 'Change the language',
             changeToEnglish: 'Change to english',
             changeToFrench: 'Change to french',
+
         }
     },
   };

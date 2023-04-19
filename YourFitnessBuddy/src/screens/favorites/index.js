@@ -2,14 +2,10 @@ import React, { useEffect } from "react";
 import { FlatList } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromFavorites } from "../../actions/favorites";
-
 import { useTheme } from "styled-components/native";
-
 import AppNavigator from "../../components/appNavigator";
 import Card from "../../components/card";
-
 import { Container, Overlay, Content, Subtitle, Title, BackgroundImage } from "../../global/styles/global.styles";
-
 import { useTranslation } from 'react-i18next';
 
 export default FavoritesScreen = ({ navigation }) => {
