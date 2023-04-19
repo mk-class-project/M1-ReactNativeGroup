@@ -7,6 +7,7 @@ import AppNavigator from "../../components/appNavigator";
 import Card from "../../components/card";
 import { Container, Overlay, Content, Subtitle, Title, BackgroundImage } from "../../global/styles/global.styles";
 import { useTranslation } from 'react-i18next';
+import { showMessage } from "react-native-flash-message";
 
 export default FavoritesScreen = ({ navigation }) => {
   const theme = useTheme();
@@ -22,6 +23,11 @@ export default FavoritesScreen = ({ navigation }) => {
 
   const handleRemoveFromFavorites = (name) => {
     dispatch(removeFromFavorites(name));
+    showMessage({
+      message: t('message.favoriteRemoved'),
+      type: "success",
+      icon: "success",
+    });
   };
 
   const renderItem = ({ item }) => (

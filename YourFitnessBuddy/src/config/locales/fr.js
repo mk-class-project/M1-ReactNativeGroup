@@ -24,6 +24,9 @@ export default {
             sendQuoteNotification: 'Notification de citation',
             themeChanged: 'Thème changé',
             languageChanged: 'Langue changée',
+            favoriteRemoved: 'Favori supprimé',
+            quoteFetched: 'Nouvelle citation',
+            dataFetched: 'Exercices récupérées',
         },   
         calendar: {
             monday: 'Lundi',

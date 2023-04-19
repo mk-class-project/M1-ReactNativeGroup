@@ -9,6 +9,7 @@ import Quote from "../../components/quote";
 import { Container, Overlay, Content, Title, Subtitle, BackgroundImage } from "../../global/styles/global.styles";
 import { useTranslation } from 'react-i18next';
 import notifee from '@notifee/react-native';
+import { showMessage } from "react-native-flash-message";
 
 const HomeScreen = ({ navigation }) => {
   const { t } = useTranslation();
@@ -27,10 +28,11 @@ const HomeScreen = ({ navigation }) => {
       });
       setLoading(false);
       dispatch(fetchQuotesSuccess(quotesWithIds));
-
-      const randomQuoteIndex = Math.floor(Math.random() * quotesWithIds.length);
-      const randomQuote = quotesWithIds[randomQuoteIndex].quote;
-      displayQuoteNotification(randomQuote);
+      showMessage({
+        message: t('message.quoteFetched'),
+        type: "success",
+        icon: "success",
+      });
 
     } catch (error) {
       console.log(error);

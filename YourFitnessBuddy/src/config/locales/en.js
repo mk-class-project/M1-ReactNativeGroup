@@ -24,6 +24,9 @@ export default {
             sendQuoteNotification: 'Send quote notification',
             themeChanged: 'Theme changed',
             languageChanged: 'Language changed',
+            favoriteRemoved: 'Favorite removed',
+            quoteFetched: 'Quote fetched',
+            dataFetched: 'Exercises fetched',
         },
         calendar: {
             monday: 'Monday',
