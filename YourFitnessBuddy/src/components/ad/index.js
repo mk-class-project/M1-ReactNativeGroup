@@ -1,42 +1,22 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { TouchableOpacity } from 'react-native';
-import { decrementCounter } from '../../actions/counter';
-
+import React from 'react';
 import { Modal } from 'react-native';
-
-import { AdContainer, AdImageStyled, AdText, CountdownText, ModalContainer, BigFriendlyButton } from './styles';
+import { useTranslation } from 'react-i18next';
+import { AdContainer, AdImageStyled, AdTitle, AdDescription, CloseButton, CloseButtonText, ModalContainer } from './styles';
 import AdImage from '../../images/wheypub.jpg';
 
 const Ad = ({ closeModal }) => {
-  const counter = useSelector((state) => state.counter);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (counter > 0) {
-        dispatch(decrementCounter());
-      } else {
-        clearInterval(timer);
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [counter, closeModal, dispatch]);
+  const { t } = useTranslation();
 
   return (
     <Modal visible={true} transparent={true}>
       <ModalContainer>
         <AdContainer>
           <AdImageStyled source={AdImage} />
-          <AdText>-10% offerts</AdText>
-          {counter > 0 ? (
-            <CountdownText>{counter} </CountdownText>
-          ) : (
-            <BigFriendlyButton onPress={closeModal}>
-              <CountdownText>X</CountdownText>
-            </BigFriendlyButton>
-          )}
+          <AdTitle>{t('message.adTitle')}</AdTitle>
+          <AdDescription>{t('message.ad')}</AdDescription>
+          <CloseButton onPress={closeModal}>
+            <CloseButtonText>{t('message.adClose')}</CloseButtonText>
+          </CloseButton>
         </AdContainer>
       </ModalContainer>
     </Modal>

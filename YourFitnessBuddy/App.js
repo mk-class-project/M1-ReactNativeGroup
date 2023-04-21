@@ -29,7 +29,7 @@ export default App = () => {
   
   useEffect(() => {
     setupAxiosInterceptors();
-
+    
     setTimeout(() => {
       RNBootSplash.hide({ fade: true });
     }, 3000);

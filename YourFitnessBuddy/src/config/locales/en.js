@@ -9,8 +9,7 @@ export default {
             changeTheme: 'Change theme',
             options: 'Options',
             chooseImage: 'Choose image',
-            setCustomImage: 'Set custom image',
-            setImageText: 'Set theme title',
+            setTheme: 'Set custom theme',
             share: 'Share',
         },
         title: {
@@ -32,6 +31,9 @@ export default {
             favoriteAdded: 'Favorite added',
             quoteFetched: 'Quote fetched',
             dataFetched: 'Exercises fetched',
+            ad: 'Enjoy -20% on your next purchase with the code "WHEY20"',
+            adTitle: 'BioNTech',
+            adClose: 'CLOSE AD',
         },
         calendar: {
             monday: 'Monday',

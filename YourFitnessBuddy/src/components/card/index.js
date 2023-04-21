@@ -4,7 +4,6 @@ import { addToFavorites, removeFromFavorites } from "../../actions/favorites";
 import { addExerciseToDay, removeExerciseFromDay } from "../../actions/calendar";
 import { showMessage } from "react-native-flash-message";
 import { useTranslation } from 'react-i18next';
-
 import { CardContainer } from './styles';
 import CardHeader from '../cardHeader';
 import CardBody from '../cardBody';

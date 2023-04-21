@@ -1,33 +1,44 @@
 import styled from 'styled-components';
 
 export const AdContainer = styled.View`
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   padding: 10px;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   border-radius: 3px;
 `;
 
 export const AdImageStyled = styled.Image`
-  width: 200px;
-  height: 300px;
-  margin-right: 10px;
+  width: 120px;
+  height: 180px;
+  margin-bottom: 10px;
+  border-radius: 3px;
 `;
 
-export const AdText = styled.Text`
-  flex: 1;
-  font-size: 16px;
+export const AdTitle = styled.Text`
+  font-size: 18px;
   font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+`;
+
+export const AdDescription = styled.Text`
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: center;
 `;
 
 export const CloseButton = styled.TouchableOpacity`
-  padding: 10px;
+  padding: 5px;
+  background-color: #f5f5f5;
+  border-radius: 3px;
 `;
 
 export const CloseButtonText = styled.Text`
   color: #777;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
 `;
 
@@ -36,15 +47,4 @@ export const ModalContainer = styled.View`
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-`;
-
-export const CountdownText = styled.Text`
-  font-size: 16px;
-`;
-
-export const BigFriendlyButton = styled.TouchableOpacity`
-  background-color: red;
-  padding: 10px;
-  border-radius: 3px;
-  margin-top: 10px;
 `;

@@ -9,8 +9,7 @@ export default {
             changeTheme: 'Changer le thème',
             options: 'Options',
             chooseImage: 'Choisir une image',
-            setCustomImage: 'Définir une image personnalisée',
-            setImageText: 'Définir le titre du thème',
+            setTheme: 'Définir un thème personnalisée',
             share: 'Partager',
         },
         title: {
@@ -32,6 +31,9 @@ export default {
             favoriteAdded: 'Favori ajouté',
             quoteFetched: 'Nouvelle citation',
             dataFetched: 'Exercices récupérées',
+            ad: 'Profitez de -20% sur votre prochain achat avec le code "WHEY20"',
+            adTitle: 'BioNTech',
+            adClose: 'FERMER LA PUBLICITÉ',
         },   
         calendar: {
             monday: 'Lundi',

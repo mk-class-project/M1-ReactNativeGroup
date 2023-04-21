@@ -1,8 +1,12 @@
 import React from "react";
-import { View, Button } from "react-native";
+import { useTranslation } from "react-i18next";
+import { View } from "react-native";
 import ImagePicker from "react-native-image-crop-picker";
+import { FriendlyButton } from "../../global/styles/global.styles";
 
 const ThemeHandler = ({ handleThemeChange }) => {
+  const { t } = useTranslation();
+
   const handleCustomImage = () => {
     ImagePicker.openPicker({
       width: 300,
@@ -17,10 +21,10 @@ const ThemeHandler = ({ handleThemeChange }) => {
 
   return (
     <View>
-      <Button title="Arnold" onPress={() => handleThemeChange("Arnold")} />
-      <Button title="Ronnie" onPress={() => handleThemeChange("Ronnie")} />
-      <Button title="Cbum" onPress={() => handleThemeChange("Cbum")} />
-      <Button title="Custom" onPress={handleCustomImage} />
+      <FriendlyButton title="Arnold" onPress={() => handleThemeChange("Arnold")} />
+      <FriendlyButton title="Ronnie" onPress={() => handleThemeChange("Ronnie")} />
+      <FriendlyButton title="Cbum" onPress={() => handleThemeChange("Cbum")} />
+      <FriendlyButton title={t('menu.setTheme')} onPress={handleCustomImage} />
     </View>
   );
 };
