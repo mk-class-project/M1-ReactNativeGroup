@@ -11,6 +11,7 @@ export default {
             chooseImage: 'Choose image',
             setCustomImage: 'Set custom image',
             setImageText: 'Set theme title',
+            share: 'Share',
         },
         title: {
             yourFitnessBuddy: 'Your Fitness Buddy',

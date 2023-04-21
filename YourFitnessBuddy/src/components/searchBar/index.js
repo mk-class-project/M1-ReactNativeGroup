@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { RadioButton } from 'react-native-paper';
-import { SearchContainer, SearchButton, Text, RadioContainer, RadioLabel, RadioText, InputGroup} from './styles';
-import { BoxInput } from '../../global/styles/global.styles';
+import { SearchContainer, Text, RadioContainer, RadioLabel, RadioText, InputGroup} from './styles';
+import { BoxInput, FriendlyButton } from '../../global/styles/global.styles';
 import { fetchExercises, fetchExercisesByMuscleAndDifficulty } from '../../api/routes';
 import { searchBar } from '../../actions/search';
 import { useDispatch } from 'react-redux';
@@ -68,7 +68,7 @@ const SearchBar = ({ onSearch }) => {
           </RadioButton.Group>
         </RadioContainer>
       </InputGroup>
-      <SearchButton title={t('message.yeahBuddy')} onPress={handleSearch} />
+      <FriendlyButton title={t('message.yeahBuddy')} onPress={handleSearch} />
     </SearchContainer>
   );
 };

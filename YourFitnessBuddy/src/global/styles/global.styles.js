@@ -50,3 +50,7 @@ export const BoxInput = styled.TextInput`
   margin-bottom: 10px;
   border-radius: 10px;
 `;
+
+export const FriendlyButton = styled.Button`
+  padding-horizontal: 10px;
+`;

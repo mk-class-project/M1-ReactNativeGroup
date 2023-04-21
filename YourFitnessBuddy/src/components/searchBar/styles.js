@@ -5,8 +5,6 @@ export const SearchContainer = styled.View`
   margin: 10px;
 `;
 
-export const SearchButton = styled.Button``;
-
 export const Text = styled.Text`
   color: ${props => props.theme.colorWhite};
   font-size: 20px;
