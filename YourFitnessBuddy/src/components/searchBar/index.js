@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
 import { RadioButton } from 'react-native-paper';
-import {
-  SearchContainer,
-  SearchInput,
-  SearchButton,
-  Text,
-  RadioContainer,
-  RadioLabel,
-  RadioText,
-  InputGroup,
-} from './styles';
+import { SearchContainer, SearchButton, Text, RadioContainer, RadioLabel, RadioText, InputGroup} from './styles';
+import { BoxInput } from '../../global/styles/global.styles';
 import { fetchExercises, fetchExercisesByMuscleAndDifficulty } from '../../api/routes';
 import { searchBar } from '../../actions/search';
 import { useDispatch } from 'react-redux';
@@ -54,7 +46,7 @@ const SearchBar = ({ onSearch }) => {
         {t('title.chooseMuscle')}
       </Text>
       <InputGroup>
-        <SearchInput
+        <BoxInput
           placeholder="'biceps'"
           value={query}
           onChangeText={handleInputChange}

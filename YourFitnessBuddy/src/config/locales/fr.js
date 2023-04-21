@@ -10,6 +10,7 @@ export default {
             options: 'Options',
             chooseImage: 'Choisir une image',
             setCustomImage: 'Définir une image personnalisée',
+            setImageText: 'Définir le titre du thème',
         },
         title: {
             yourFitnessBuddy: 'Votre compagnon de fitness',

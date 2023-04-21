@@ -41,3 +41,12 @@ export const Subtitle = styled.Text`
   color: ${props => props.theme.colorWhite};
   margin-bottom: 10px;
 `;
+
+export const BoxInput = styled.TextInput`
+  height: auto;
+  width: 50%;
+  background-color: ${props => props.theme.colorWhite};
+  padding-horizontal: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+`;

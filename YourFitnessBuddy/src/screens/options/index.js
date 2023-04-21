@@ -23,8 +23,8 @@ export default OptionsScreen = ( {navigation} ) => {
           });
     };
 
-    const changeTheme = (theme) => {
-        handleThemeChange(theme);
+    const changeTheme = (theme, customImageUri) => {
+        handleThemeChange(theme, customImageUri);
         showMessage({
           message: t('message.themeChanged'),
           type: "success",
@@ -41,7 +41,7 @@ export default OptionsScreen = ( {navigation} ) => {
                     <Title>{t('menu.options')}</Title>
                     <Button title={t('language.changeToEnglish')} onPress={() => changeLanguage('en')} />
                     <Button title={t('language.changeToFrench')} onPress={() => changeLanguage('fr')} />
-                        <ThemeHandler handleThemeChange={changeTheme} />
+                    <ThemeHandler handleThemeChange={changeTheme} />
                     </Content>
                 </BackgroundImage>
             </Container>

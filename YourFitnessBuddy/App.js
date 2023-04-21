@@ -16,10 +16,17 @@ import './src/config/translations';
 export default App = () => {
   const [theme, setTheme] = useState(BuddyThemes.Ronnie);
 
-  const handleThemeChange = (newTheme) => {
-    setTheme(BuddyThemes[newTheme]);
+  const handleThemeChange = (newTheme, customImageUri) => {
+    if (newTheme === "Custom" && customImageUri) {
+      setTheme({
+        ...BuddyThemes.Custom,
+        image: { uri: customImageUri },
+      });
+    } else {
+      setTheme(BuddyThemes[newTheme]);
+    }
   };
-
+  
   useEffect(() => {
     setupAxiosInterceptors();
 
