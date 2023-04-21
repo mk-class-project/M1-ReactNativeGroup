@@ -8,6 +8,8 @@ export default {
             favorites: 'Favorites',
             changeTheme: 'Change theme',
             options: 'Options',
+            chooseImage: 'Choose image',
+            setCustomImage: 'Set custom image',
         },
         title: {
             yourFitnessBuddy: 'Your Fitness Buddy',
@@ -25,6 +27,7 @@ export default {
             themeChanged: 'Theme changed',
             languageChanged: 'Language changed',
             favoriteRemoved: 'Favorite removed',
+            favoriteAdded: 'Favorite added',
             quoteFetched: 'Quote fetched',
             dataFetched: 'Exercises fetched',
         },
@@ -37,6 +40,7 @@ export default {
             saturday: 'Saturday',
             sunday: 'Sunday',
             addCalendar: 'Add to Calendar',
+            share: "Share"
         },
         filter: {
             muscle: 'Muscle',

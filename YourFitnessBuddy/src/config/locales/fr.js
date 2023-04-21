@@ -8,9 +8,11 @@ export default {
             favorites: 'Favoris',
             changeTheme: 'Changer le thème',
             options: 'Options',
+            chooseImage: 'Choisir une image',
+            setCustomImage: 'Définir une image personnalisée',
         },
         title: {
-            yourFitnessBuddy: 'Votre compagnon de remise en forme',
+            yourFitnessBuddy: 'Votre compagnon de fitness',
             getYouRipped: 'Allons vous déchirer !',
             loveExercices: 'Vous adorez ces exercices !',
             chooseMuscle: 'Choisis un muscle mec',
@@ -25,6 +27,7 @@ export default {
             themeChanged: 'Thème changé',
             languageChanged: 'Langue changée',
             favoriteRemoved: 'Favori supprimé',
+            favoriteAdded: 'Favori ajouté',
             quoteFetched: 'Nouvelle citation',
             dataFetched: 'Exercices récupérées',
         },   
@@ -37,6 +40,7 @@ export default {
             saturday: 'Samedi',
             sunday: 'Dimanche',
             addCalendar: 'Ajouter au calendrier',
+            share: "Partager"
         }, 
         filter: {
             muscle: 'Muscle',
