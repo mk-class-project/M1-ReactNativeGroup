@@ -6,7 +6,7 @@ import { fetchInspirationalQuotes } from "../../api/routes";
 import { useTheme } from "styled-components/native";
 import AppNavigator from "../../components/appNavigator";
 import Quote from "../../components/quote";
-import { Container, Overlay, Content, Title, Subtitle, BackgroundImage } from "../../global/styles/global.styles";
+import { Container, Overlay, Content, Title, Subtitle, BackgroundImage, FriendlyButton } from "../../global/styles/global.styles";
 import { useTranslation } from 'react-i18next';
 import notifee from '@notifee/react-native';
 import { showMessage } from "react-native-flash-message";
@@ -79,8 +79,8 @@ const HomeScreen = ({ navigation }) => {
               return <Quote key={data.id} author={data.author} quote={data.quote} />;
             })
           )}
-          <Button title={t('message.getAnotherQuote')}  onPress={() => fetchQuotes()} />
-          <Button title={t('message.sendQuoteNotification')} onPress={() => sendQuoteNotification()} />
+          <FriendlyButton title={t('message.getAnotherQuote')}  onPress={() => fetchQuotes()} />
+          <FriendlyButton title={t('message.sendQuoteNotification')} onPress={() => sendQuoteNotification()} />
         </Content>
       </BackgroundImage>
       <AppNavigator navigation={navigation} />

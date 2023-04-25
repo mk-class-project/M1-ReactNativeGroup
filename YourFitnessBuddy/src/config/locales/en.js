@@ -8,6 +8,9 @@ export default {
             favorites: 'Favorites',
             changeTheme: 'Change theme',
             options: 'Options',
+            chooseImage: 'Choose image',
+            setTheme: 'Set custom theme',
+            share: 'Share',
         },
         title: {
             yourFitnessBuddy: 'Your Fitness Buddy',
@@ -25,8 +28,12 @@ export default {
             themeChanged: 'Theme changed',
             languageChanged: 'Language changed',
             favoriteRemoved: 'Favorite removed',
+            favoriteAdded: 'Favorite added',
             quoteFetched: 'Quote fetched',
             dataFetched: 'Exercises fetched',
+            ad: 'Enjoy -20% on your next purchase with the code "WHEY20"',
+            adTitle: 'BioNTech',
+            adClose: 'CLOSE AD',
         },
         calendar: {
             monday: 'Monday',
@@ -37,6 +44,7 @@ export default {
             saturday: 'Saturday',
             sunday: 'Sunday',
             addCalendar: 'Add to Calendar',
+            share: "Share"
         },
         filter: {
             muscle: 'Muscle',

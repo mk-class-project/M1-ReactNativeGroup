@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import { addToFavorites, removeFromFavorites } from "../../actions/favorites";
 import { addExerciseToDay, removeExerciseFromDay } from "../../actions/calendar";
-
+import { showMessage } from "react-native-flash-message";
+import { useTranslation } from 'react-i18next';
 import { CardContainer } from './styles';
 import CardHeader from '../cardHeader';
 import CardBody from '../cardBody';
@@ -13,6 +14,7 @@ const Card = ({ name, type, muscle, equipment, difficulty, instructions, isFavor
   const [favorite, setIsFavorite] = useState(isFavorite);
   const dispatch = useDispatch();
   const [selectedDays, setSelectedDays] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     setIsFavorite(isFavorite);
@@ -31,8 +33,19 @@ const Card = ({ name, type, muscle, equipment, difficulty, instructions, isFavor
         difficulty,
         instructions,
       }));
+      showMessage({
+        message: t('message.favoriteAdded'),
+        type: "success",
+        icon: "success",
+      });
+
     } else {
       dispatch(removeFromFavorites(name));
+      showMessage({
+        message: t('message.favoriteRemoved'),
+        type: "success",
+        icon: "success",
+      });
     }
   };
 

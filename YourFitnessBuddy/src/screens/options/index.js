@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
-import { Button } from "react-native";
-
-import { Container, Overlay, Content, Title, BackgroundImage } from "../../global/styles/global.styles";
+import { Container, Overlay, Content, Title, BackgroundImage, FriendlyButton } from "../../global/styles/global.styles";
 import { useTheme } from "styled-components/native";
 import AppNavigator from "../../components/appNavigator";
 import ThemeHandler from "../../components/themeHandler";
@@ -23,8 +21,8 @@ export default OptionsScreen = ( {navigation} ) => {
           });
     };
 
-    const changeTheme = (theme) => {
-        handleThemeChange(theme);
+    const changeTheme = (theme, customImageUri) => {
+        handleThemeChange(theme, customImageUri);
         showMessage({
           message: t('message.themeChanged'),
           type: "success",
@@ -39,9 +37,9 @@ export default OptionsScreen = ( {navigation} ) => {
                     <Overlay />
                     <Content>
                     <Title>{t('menu.options')}</Title>
-                    <Button title={t('language.changeToEnglish')} onPress={() => changeLanguage('en')} />
-                    <Button title={t('language.changeToFrench')} onPress={() => changeLanguage('fr')} />
-                        <ThemeHandler handleThemeChange={changeTheme} />
+                    <FriendlyButton title={t('language.changeToEnglish')} onPress={() => changeLanguage('en')} />
+                    <FriendlyButton title={t('language.changeToFrench')} onPress={() => changeLanguage('fr')} />
+                    <ThemeHandler handleThemeChange={changeTheme} />
                     </Content>
                 </BackgroundImage>
             </Container>

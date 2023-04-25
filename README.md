@@ -52,7 +52,7 @@ Ce projet consiste en application mobile Android qui permet de suivre son progra
 
 - Notifications (paquet Notifee)
 - Publicité
-- ~~Accèder à la galerie photos pour ajouter son propre thème (Appareil Photo, Galerie Photos)~~
+- Accèder à la galerie photos pour ajouter son propre thème (Appareil Photo, Galerie Photos)
 - Avoir un système de retour utilisateur (react-native-flash-message), notifier les succès/erreurs.
 - Système multilingue
 
