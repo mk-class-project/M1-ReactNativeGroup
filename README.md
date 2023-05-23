@@ -43,13 +43,7 @@ Ce projet consiste en application mobile Android qui permet de suivre son progra
 
 20/04 : 
 - Faire des animations
-- ~~Partager son programme fitness sur les réseaux sociaux~~
-
-- ~~Compter le nombre de calories brûlées selon l'activité physique~~
-
-  - ~~Selon le temps passé à faire l'activité~~
-  - ~~Selon le poids de la personne~~
-
+- Partager son programme fitness sur les réseaux sociaux
 - Notifications (paquet Notifee)
 - Publicité
 - Accèder à la galerie photos pour ajouter son propre thème (Appareil Photo, Galerie Photos)
@@ -60,12 +54,10 @@ Ce projet consiste en application mobile Android qui permet de suivre son progra
 
 APK disponible dans les releases
 
-[Video Youtube](https://youtu.be/AyWJRavYTCM)
+[Video Youtube](https://www.youtube.com/watch?v=7AbQzy-4RzY)
 
 ## Liens
 
 https://api-ninjas.com/api/exercises
-
-https://api-ninjas.com/api/caloriesburned
 
 https://api-ninjas.com/api/quotes
